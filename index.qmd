@@ -1,0 +1,32 @@
+---
+title: "janf"
+listing:
+  contents: posts
+  feed: true
+  sort: 
+    - "date desc"
+    - "title desc"
+  type: default
+  image-height: 130px
+  image-placeholder: "profile.jpg"
+  fields: [image, title, description, date, reading-time]
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  date-format: "DD-MM-YY"
+  page-size: 9
+  id: blog-listings
+page-layout: full
+title-block-banner: false
+---
+
+![](mountain.jpg){layout="[1,79]"}
+
+Hello, I'm [Jan F.](about.qmd) from west austria 🇦🇹 . I like to learn or create new things. <br>
+Here i take notes about these processes or outcomes ✌️
+
+## blog posts
+::: {#blog-listings}
+:::
+
+

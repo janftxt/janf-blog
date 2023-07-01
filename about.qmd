@@ -1,0 +1,35 @@
+---
+title: "janf"
+about:
+  id: hero-heading
+  template: trestles
+  image: profile.jpg
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+:::{#hero-heading}
+
+Hello, I’m Jan F. from west austria 🇦🇹 . I like to learn or create new things.
+Here i take notes about these processes or outcomes ✌️
+
+Email me at janf[at]gmail.com if you’d like to chat!
+
+
+## topics i like
+- Technical
+  - Project Managment
+  - Software development
+  - Machine Learning
+- Life
+  - Minimalism
+  - Health
+  - Reading
+
+
+and much more...
+:::

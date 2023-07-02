@@ -7,20 +7,23 @@ about:
   links:
     - icon: twitter
       text: twitter
-      href: https://twitter.com
+      href: https://twitter.com/janfdev
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/janfdev
 ---
 :::{#hero-heading}
 
-Hello, I’m Jan F. from west austria 🇦🇹 . I like to learn or create new things.
+## Hey 👋,
+
+I’m Jan F. from west austria 🇦🇹 . I like to learn or create new things.
 Here i take notes about these processes or outcomes ✌️
 
-Email me at janf[at]gmail.com if you’d like to chat!
+Email me at <i>mail[at]janf.cc</i> if you’d like to chat!
 
 
-## topics i like
+my topics of interest
+
 - Technical
   - Project Managment
   - Software development
@@ -29,7 +32,6 @@ Email me at janf[at]gmail.com if you’d like to chat!
   - Minimalism
   - Health
   - Reading
-
 
 and much more...
 :::

@@ -128,12 +128,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/janfdev" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/janfdev" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -203,50 +203,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="what-is-anaconda" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-anaconda">What is Anaconda</h2>
 <p>Anaconda is a distribution of the Python for sientific computing (data sience, machine learning applications, large-scale data processing, predictive analytics, etc.), that aims to simplify package management and deployment.</p>
+<p><a href="https://docs.conda.io/projects/conda/en/latest/index.html">Conda Documentation</a></p>
+<p><a href="https://docs.conda.io/projects/conda/en/latest/index.html">Anaconda (Python distribution)</a></p>
 <section id="environments" class="level3">
 <h3 class="anchored" data-anchor-id="environments">Environments</h3>
 <section id="list-environments" class="level4">
 <h4 class="anchored" data-anchor-id="list-environments">List environments</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="38">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>conda env <span class="bu">list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="create-environment-with-python-version-x.x" class="level4">
 <h4 class="anchored" data-anchor-id="create-environment-with-python-version-x.x">Create environment with Python version x.x</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="39">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>conda create <span class="op">--</span>name ENV_NAME python<span class="op">=</span>x.x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="create-environment-from-environment.yml" class="level4">
 <h4 class="anchored" data-anchor-id="create-environment-from-environment.yml">Create environment from environment.yml</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="40">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>conda enc create <span class="op">--</span><span class="bu">file</span><span class="op">=</span>environment.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="activate-deactivate-environment" class="level4">
 <h4 class="anchored" data-anchor-id="activate-deactivate-environment">Activate / Deactivate environment</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="41">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>source activate ENV_Name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="42">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>source deactivate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="delete-environment" class="level4">
 <h4 class="anchored" data-anchor-id="delete-environment">Delete environment</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="43">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>conda env remove <span class="op">--</span>name ENV_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="create-environment.yml-from-a-running-environment" class="level4">
 <h4 class="anchored" data-anchor-id="create-environment.yml-from-a-running-environment">Create environment.yml from a running environment</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="44">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>conda env export <span class="op">&gt;</span> environment.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="clone-existing-environment" class="level4">
 <h4 class="anchored" data-anchor-id="clone-existing-environment">Clone existing environment</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="45">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>conda create <span class="op">--</span>clone ENV_NAME <span class="op">--</span>name NEW_ENV_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -255,28 +257,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="packages">Packages</h3>
 <section id="search-package" class="level4">
 <h4 class="anchored" data-anchor-id="search-package">Search package</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="46">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>conda search PACKAGE_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="install-package" class="level4">
 <h4 class="anchored" data-anchor-id="install-package">Install package</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="47">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>conda install PACKAGE_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="48">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>conda install <span class="op">-</span>c CHANNEL_NAME PACKAGE_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="update-package" class="level4">
 <h4 class="anchored" data-anchor-id="update-package">Update package</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="49">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>conda update PACKAGE_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="list-installed-packages" class="level4">
 <h4 class="anchored" data-anchor-id="list-installed-packages">List installed packages</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="50">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>conda <span class="bu">list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -285,13 +287,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="channels">Channels</h3>
 <section id="list-channels" class="level4">
 <h4 class="anchored" data-anchor-id="list-channels">List channels</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="51">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>conda config <span class="op">--</span>show channels</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="add-channel" class="level4">
 <h4 class="anchored" data-anchor-id="add-channel">Add channel</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="52">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>conda config <span class="op">--</span>aa channels CHANNEL_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -300,13 +302,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="basic">Basic</h3>
 <section id="show-installation-info" class="level4">
 <h4 class="anchored" data-anchor-id="show-installation-info">Show installation info</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="53">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>conda info</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="update-to-current-version" class="level4">
 <h4 class="anchored" data-anchor-id="update-to-current-version">Update to current version</h4>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}" data-execution_count="54">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;shellscript&quot;}">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>conda update conda</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>janf</title>
+<link>https://janfdev.github.io/janf-blog/index.html</link>
+<atom:link href="https://janfdev.github.io/janf-blog/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.3.433</generator>
+<lastBuildDate>Thu, 05 Jun 2025 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>hello world</title>
+  <dc:creator>janf </dc:creator>
+  <link>https://janfdev.github.io/janf-blog/posts/welcome/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This is the first post on this blog. Sewas!</p>
+<p>Hello, I’m <a href="about.qmd">Jan F.</a> from west austria 🇦🇹 . I like to learn or create new things. <br> Here i take notes about these processes or outcomes ✌️</p>
+<p><img src="https://janfdev.github.io/janf-blog/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
+
+
+
+ ]]></description>
+  <category>social</category>
+  <guid>https://janfdev.github.io/janf-blog/posts/welcome/index.html</guid>
+  <pubDate>Thu, 05 Jun 2025 22:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "notes/anaconda cheatsheet/index.html",
+    "href": "notes/anaconda cheatsheet/index.html",
+    "title": "anaconda cheatsheet",
+    "section": "",
+    "text": "Anaconda is a distribution of the Python for sientific computing (data sience, machine learning applications, large-scale data processing, predictive analytics, etc.), that aims to simplify package management and deployment.\nConda Documentation\nAnaconda (Python distribution)\n\n\n\n\n\nconda env list\n\n\n\n\n\nconda create --name ENV_NAME python=x.x\n\n\n\n\n\nconda enc create --file=environment.yml\n\n\n\n\n\nsource activate ENV_Name\n\n\nsource deactivate\n\n\n\n\n\nconda env remove --name ENV_NAME\n\n\n\n\n\nconda env export &gt; environment.yml\n\n\n\n\n\nconda create --clone ENV_NAME --name NEW_ENV_NAME\n\n\n\n\n\n\n\n\nconda search PACKAGE_NAME\n\n\n\n\n\nconda install PACKAGE_NAME\n\n\nconda install -c CHANNEL_NAME PACKAGE_NAME\n\n\n\n\n\nconda update PACKAGE_NAME\n\n\n\n\n\nconda list\n\n\n\n\n\n\n\n\nconda config --show channels\n\n\n\n\n\nconda config --aa channels CHANNEL_NAME\n\n\n\n\n\n\n\n\nconda info\n\n\n\n\n\nconda update conda"
+  },
+  {
+    "objectID": "notes/anaconda cheatsheet/index.html#what-is-anaconda",
+    "href": "notes/anaconda cheatsheet/index.html#what-is-anaconda",
+    "title": "anaconda cheatsheet",
+    "section": "",
+    "text": "Anaconda is a distribution of the Python for sientific computing (data sience, machine learning applications, large-scale data processing, predictive analytics, etc.), that aims to simplify package management and deployment.\nConda Documentation\nAnaconda (Python distribution)\n\n\n\n\n\nconda env list\n\n\n\n\n\nconda create --name ENV_NAME python=x.x\n\n\n\n\n\nconda enc create --file=environment.yml\n\n\n\n\n\nsource activate ENV_Name\n\n\nsource deactivate\n\n\n\n\n\nconda env remove --name ENV_NAME\n\n\n\n\n\nconda env export &gt; environment.yml\n\n\n\n\n\nconda create --clone ENV_NAME --name NEW_ENV_NAME\n\n\n\n\n\n\n\n\nconda search PACKAGE_NAME\n\n\n\n\n\nconda install PACKAGE_NAME\n\n\nconda install -c CHANNEL_NAME PACKAGE_NAME\n\n\n\n\n\nconda update PACKAGE_NAME\n\n\n\n\n\nconda list\n\n\n\n\n\n\n\n\nconda config --show channels\n\n\n\n\n\nconda config --aa channels CHANNEL_NAME\n\n\n\n\n\n\n\n\nconda info\n\n\n\n\n\nconda update conda"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJun 6, 2025\n\n\nhello world\n\n\njanf \n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "hello world",
+    "section": "",
+    "text": "This is the first post on this blog. Sewas!\nHello, I’m Jan F. from west austria 🇦🇹 . I like to learn or create new things.  Here i take notes about these processes or outcomes ✌️"
+  },
+  {
+    "objectID": "notes.html",
+    "href": "notes.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\n06-06-25\n\n\nanaconda cheatsheet\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "janf",
+    "section": "",
+    "text": "Hello, I’m Jan F. from west austria 🇦🇹 . I like to learn or create new things.  Here i take notes about these processes or outcomes ✌️"
+  },
+  {
+    "objectID": "index.html#blog-posts",
+    "href": "index.html#blog-posts",
+    "title": "janf",
+    "section": "blog posts",
+    "text": "blog posts\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nhello world\n\n\n\n\n\n\n\n\n\n\n\n\n06-06-25\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "janf",
+    "section": "",
+    "text": "twitter\n  \n  \n    \n     Github\n  \n\n  \n  \n\n\nI’m Jan F. from west austria 🇦🇹 . I like to learn or create new things. Here i take notes about these processes or outcomes ✌️\nEmail me at mail[at]janf.cc if you’d like to chat!\nmy topics of interest\n\nTechnical\n\nProject Managment\nSoftware development\nMachine Learning\n\nLife\n\nMinimalism\nHealth\nReading\n\n\nand much more…"
+  },
+  {
+    "objectID": "about.html#hey",
+    "href": "about.html#hey",
+    "title": "janf",
+    "section": "",
+    "text": "I’m Jan F. from west austria 🇦🇹 . I like to learn or create new things. Here i take notes about these processes or outcomes ✌️\nEmail me at mail[at]janf.cc if you’d like to chat!\nmy topics of interest\n\nTechnical\n\nProject Managment\nSoftware development\nMachine Learning\n\nLife\n\nMinimalism\nHealth\nReading\n\n\nand much more…"
+  }
+]

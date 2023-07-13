@@ -5,7 +5,7 @@ date: "30-06-23"
 categories: [social]
 ---
 
-This is the first post on this blog. Sewas!
+This is the first post on this blog. Seavas!
 
 Hello, I'm [Jan F.](about.qmd) from west austria 🇦🇹 . I like to learn or create new things. <br>
 Here i take notes about these processes or outcomes ✌️

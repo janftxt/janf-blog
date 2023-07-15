@@ -1,1 +1,1 @@
-Sitemap: https://janfdev.github.io/janf-blog/sitemap.xml
+Sitemap: https://janf.cc/sitemap.xml

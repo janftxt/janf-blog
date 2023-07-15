@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>janf</title>
-<link>https://janfdev.github.io/janf-blog/notes.html</link>
-<atom:link href="https://janfdev.github.io/janf-blog/notes.xml" rel="self" type="application/rss+xml"/>
+<link>https://janf.cc/notes.html</link>
+<atom:link href="https://janf.cc/notes.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.433</generator>
 <lastBuildDate>Thu, 05 Jun 2025 22:00:00 GMT</lastBuildDate>
 <item>
   <title>anaconda cheatsheet</title>
   <dc:creator>janf </dc:creator>
-  <link>https://janfdev.github.io/janf-blog/notes/anaconda cheatsheet/index.html</link>
+  <link>https://janf.cc/notes/anaconda cheatsheet/index.html</link>
   <description><![CDATA[ 
 
 
@@ -170,7 +170,7 @@ font-style: inherit;">--</span>aa channels CHANNEL_NAME</span></code></pre></div
 
  ]]></description>
   <category>cheatsheet</category>
-  <guid>https://janfdev.github.io/janf-blog/notes/anaconda cheatsheet/index.html</guid>
+  <guid>https://janf.cc/notes/anaconda cheatsheet/index.html</guid>
   <pubDate>Thu, 05 Jun 2025 22:00:00 GMT</pubDate>
 </item>
 </channel>

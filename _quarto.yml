@@ -3,6 +3,7 @@ project:
 
 website:
   title: "janf"
+  site-url: https://janf.cc
   search: true
   navbar:
     left:

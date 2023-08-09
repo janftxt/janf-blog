@@ -3,7 +3,8 @@ title: "janf"
 about:
   id: hero-heading
   template: trestles
-  image: profile.jpg
+  image: janfprofile.jpg
+  image-width: 450px
   links:
     - icon: twitter
       text: twitter

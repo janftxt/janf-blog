@@ -7,8 +7,7 @@ categories: [social]
 
 This is the first post on this blog. Seavas!
 
-Hello, I'm [Jan F.](../../about.qmd) from west austria 🇦🇹 . I like to learn or create new things. <br>
-Here i take notes about these processes or outcomes ✌️
+Hello, I'm [Jan F.](../../about.qmd) from west austria 🇦🇹 . <br> I like to learn or create new things. Here i take notes about these processes or outcomes ✌️
 
 ![](thumbnail.jpg)
 

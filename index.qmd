@@ -19,10 +19,9 @@ listing:
 page-layout: full
 title-block-banner: false
 ---
-Hello, I'm [Jan F.](about.qmd) from west austria 🇦🇹 . I like to learn or create new things. <br>
-Here i take notes about these processes or outcomes ✌️
+Hello, I'm [Jan F.](about.qmd) from west austria 🇦🇹 .<br> I like to learn or create new things. Here i take notes about these processes or outcomes ✌️
 
-![zion 2022 - janf](mountain.jpg){fig-align="left" width=100%}
+![ZION 2022 - janf](mountain.jpg){fig-align="left" width=100%}
 
 ## blog posts
 ::: {#blog-listings}

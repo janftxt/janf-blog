@@ -1,3 +1,3 @@
 # janf-blog
 
-This ist my personal blog. [janf.cc](https://janf.cc)
+This ist my personal blog.  [janf.cc](https://janf.cc)

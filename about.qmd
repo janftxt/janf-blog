@@ -4,7 +4,6 @@ about:
   id: hero-heading
   template: trestles
   image: janfprofile.jpg
-  image-width: 450px
   links:
     - icon: twitter
       text: twitter

@@ -5,9 +5,13 @@ project:
 
 website:
   title: "janf"
+  site-url: https://janf.cc
+  description: "janf.cc"
   search: true
   navbar:
     left:
+      - text: "Blog"
+        file: blog.qmd
       - text: "Notes"
         file: notes.qmd
       - text: "About"

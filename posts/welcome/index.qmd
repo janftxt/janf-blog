@@ -1,7 +1,9 @@
 ---
 title: "hello world"
+description: 'The first post on this blog'
 author: "janf"
 date: "30-06-23"
+image: thumbnail.jpeg
 categories: [social]
 ---
 
@@ -9,5 +11,6 @@ This is the first post on this blog. Seavas!
 
 Hello, I'm [Jan F.](../../about.qmd) from west austria 🇦🇹 . <br> I like to learn or create new things. Here i take notes about these processes or outcomes ✌️
 
-![](thumbnail.jpg)
+##### [title]
+![flora - janf - 2020](thumbnail.JPEG){fig-align="left" width=75%}
 

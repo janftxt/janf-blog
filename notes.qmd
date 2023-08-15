@@ -13,7 +13,7 @@ listing:
   categories: true
   sort-ui: true
   filter-ui: true
-  date-format: "DD-MM-YY"
+  date-format: iso 
   page-size: 9
 page-layout: full
 title-block-banner: false

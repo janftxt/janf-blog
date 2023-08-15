@@ -1,7 +1,9 @@
 ---
 title: "Blog"
 listing:
-  contents: posts
+  contents: 
+    - 'posts/*/*_post.qmd'
+    - 'posts/*/*_post.ipynb'
   feed: true
   sort: 
     - "date desc"
@@ -13,8 +15,8 @@ listing:
   categories: true
   sort-ui: true
   filter-ui: true
-  date-format: "DD-MM-YY"
   page-size: 9
+  date-format: iso
   id: blog-listings
 page-layout: full
 title-block-banner: false

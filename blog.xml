@@ -10,26 +10,212 @@
 <atom:link href="https://janf.cc/blog.xml" rel="self" type="application/rss+xml"/>
 <description>janf.cc</description>
 <generator>quarto-1.3.433</generator>
-<lastBuildDate>Thu, 05 Jun 2025 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 13 Aug 2023 22:00:00 GMT</lastBuildDate>
 <item>
-  <title>hello world</title>
+  <title>fastai book chapter 1</title>
   <dc:creator>janf </dc:creator>
-  <link>https://janf.cc/posts/welcome/index.html</link>
+  <link>https://janf.cc/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_post.html</link>
   <description><![CDATA[ 
 
 
 
 
-<p>This is the first post on this blog. Seavas!</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://janf.cc/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_thumbnail.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">fastai book chapter 1 - janf - 2023</figcaption>
+</figure>
+</div>
+<section id="intro" class="level1">
+<h1>Intro</h1>
+<p>This my summary of chapter 1 from the book ‘Deep Learning for Coders with fastai &amp; PyTorch’.</p>
+<ul>
+<li>questions - question about the chapter</li>
+<li>key concepts - summarized key concepts of the chapter</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Links
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Homepage: <a href="https://www.fast.ai/">fastai hompage</a></li>
+<li>Online Book: <a href="https://course.fast.ai/Resources/book.html">fastai online book</a></li>
+<li>Author: <a href="https://jeremy.fast.ai/">jermey howard</a></li>
+<li>Author: <a href="https://sgugger.github.io/">sylvain gugger</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="questions" class="level1">
+<h1>Questions</h1>
+<p>Questions about the chapter.</p>
+<p><a href="../../posts/2023-08-14_your_deep_learning_journey/subsite/your_deep_learning_journey_questions.html">Questions - Chapter 1 - Your deep learning journey</a></p>
+</section>
+<section id="code" class="level1">
+<h1>Code</h1>
+<p>Code from this chapter.</p>
+<p><a href="../../posts/2023-08-14_your_deep_learning_journey/code/cats_and_dogs.html">Code - Chapter 1 - Your deep learning journey</a></p>
+</section>
+<section id="key-concepts" class="level1">
+<h1>Key Concepts</h1>
+<p>Summarized key concepts ot this chapter.</p>
+<section id="what-is-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-machine-learning">What is machine learning</h2>
+<p>The idea is instead of telling the computer the exact steps required to solve a problem, show it examples of the problem to solve, and let it figure out how to solve it itself.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://janf.cc/posts/2023-08-14_your_deep_learning_journey/maschine_learning.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">training a machine learning model - fastai - 2023</figcaption>
+</figure>
+</div>
+<ul>
+<li>weight assignment</li>
+<li>automatic means of testing the effectiveness</li>
+<li>current weight assignment in terms of actual performance</li>
+<li>mechanism for altering the weight assignment so as to maximize the performance</li>
+</ul>
+</section>
+<section id="what-is-deep-learning" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-deep-learning">What is deep learning</h2>
+<p>Deep learning is specialty within machine learning that uses neural networks with multiple layers.</p>
+</section>
+<section id="why-are-neural-network-great-for-machine-deep-learning" class="level2">
+<h2 class="anchored" data-anchor-id="why-are-neural-network-great-for-machine-deep-learning">Why are neural network great for machine / deep learning</h2>
+<ul>
+<li>If you regard a neural network as a mathematical function, it turns out to be function that ist extremely flexible depending on its weights.</li>
+<li>A mathematical proof called the universal approximation theorem shows that this function can solve any problem to any level of accuracy.</li>
+<li>In neural network we can use stochastic gradient descent (SGD)</li>
+<li>To determine the actual performance we can define our models performance as its accuracy at predicting the correct answers.</li>
+</ul>
+</section>
+<section id="modern-deep-learning-loop-and-jargon" class="level2">
+<h2 class="anchored" data-anchor-id="modern-deep-learning-loop-and-jargon">Modern Deep Learning Loop and Jargon</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://janf.cc/posts/2023-08-14_your_deep_learning_journey/modern_deep_learning_loop.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">modern deep learning loop - fastai - 2023</figcaption>
+</figure>
+</div>
+<ul>
+<li><b>Architecture</b> The template of the model that we trying to fit, the actual mathematical function that we’re passing the input data and parameters to.</li>
+<li><b>Model</b> The combination of the architecture with a particular set of parameters.</li>
+<li><b>Label</b> The data that we trying to predict.</li>
+<li><b>Parameters</b> The values in the model that change what task it can do and that are updated through model training</li>
+<li><b>Predictions</b> The results of the model are called predictions. The predictions are calculated from the independent variable, which is the data not including the labels.</li>
+<li><b>Loss</b> Loss ist the measurement of the performance. The loss depends not only on the predictions, but also on the correct labels.</li>
+<li><b>Fit / Train</b> Update the parameters of the model such that the predictions of the model using the input data match the target labels.</li>
+<li><b>Epoch</b> One complete pass through the input data (training set)</li>
+</ul>
+</section>
+<section id="limitations-inherent-to-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-inherent-to-machine-learning">Limitations Inherent to Machine Learning</h2>
+<ul>
+<li>A model cannot be created without data.</li>
+<li>A model can learn to operate on only the patterns seen in the input data used to train it.</li>
+<li>This learning approach creates only predictions, not recommended actions.</li>
+<li>It’s not enough to just have examples of input data, we need labels for that data too.</li>
+</ul>
+</section>
+<section id="classification-and-regression" class="level2">
+<h2 class="anchored" data-anchor-id="classification-and-regression">Classification and Regression</h2>
+<ul>
+<li><b>Classification</b> A classification model is one that attempts to predict a class, or category. That is, it’s predicting from a number of discrete possibilities.</li>
+<li><b>Regression</b> A regression model is one that attempts to predict one or more numeric quantities, such as a temperature or a location.</li>
+</ul>
+</section>
+<section id="what-is-overfitting" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-overfitting">What is Overfitting</h2>
+<p>Overfitting is the single most important and challenging issue when training for all machine learning. Training a model in such a way that it remembers specific features of the input data, rather than generalizing well to data not seen during training.</p>
+</section>
+<section id="training-set-validation-sets-and-test-sets" class="level2">
+<h2 class="anchored" data-anchor-id="training-set-validation-sets-and-test-sets">Training Set, Validation Sets and Test Sets</h2>
+<ul>
+<li><b>Training set</b> The data used for fitting the model, does not include any data from the validation set. (If there is enough data 80% is used for training)</li>
+<li><b>Validation set</b> A set of data held out from training, used only for measuring how good the model is. (If there is enough data 20% is used for validation)</li>
+<li><b>Test set</b> As we hold the validation data back from the training process, we can hold back a test set data even from ourselves. It cannot be used to improve the model, it can only be used to evaluate the model at the very end. (Take out some data for testing and split the rest to 80% for training and 20% for validation)</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For decision makers it is important to unsure to rally understand what a test and validation set is. For example you should never give out all the data to an external vender. Allays hold some test data (test set) for your own validation of the final model.</p>
+</div>
+</div>
+</section>
+<section id="what-is-a-cnn-convolutional-neural-network" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-cnn-convolutional-neural-network">What is a CNN (Convolutional neural network)</h2>
+<p>Convolutional neural network, a type of neural network that works particularly well for computer vision tasks.</p>
+</section>
+<section id="pertrained-model-and-fine-tuning" class="level2">
+<h2 class="anchored" data-anchor-id="pertrained-model-and-fine-tuning">Pertrained model and Fine-tuning</h2>
+<p><b>Pretrained model</b> A pretrained model has weights already been trained on some other dataset. You should nearly always use a pretrained model, because it means the your model, before you’ve even shown it any of your data, is already very capable. For instance. parts of pretrained models will handle edge, gradient, and color detection. which are needed for many tasks.</p>
+<p><b>Transfer learning</b> Using a pretrained model for a task different to what it was originally trained for.</p>
+<p><b>Fine-tuning</b> A transfer learning technique where the parameters of a pretrained model are updated by training for additional epochs using a different task that used for pretraining.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using a pretrained model is the most important method we have to allow us to train more accurate models, more quickly, with less data, and less time and money.</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>fastai</category>
+  <category>deeplearning</category>
+  <category>self-study</category>
+  <guid>https://janf.cc/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_post.html</guid>
+  <pubDate>Sun, 13 Aug 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://janf.cc/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>hello world</title>
+  <dc:creator>janf </dc:creator>
+  <link>https://janf.cc/posts/2023-06-30_welcome/welcome_post.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://janf.cc/posts/2023-06-30_welcome/welcome_thumbnail.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">flora - janf - 2020</figcaption>
+</figure>
+</div>
+<section id="this-is-the-first-post-on-this-blog.-seavas" class="level1">
+<h1>This is the first post on this blog. Seavas!</h1>
 <p>Hello, I’m <a href="../../about.html">Jan F.</a> from west austria 🇦🇹 . <br> I like to learn or create new things. Here i take notes about these processes or outcomes ✌️</p>
-<p><img src="https://janf.cc/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
 
 
+</section>
 
  ]]></description>
   <category>social</category>
-  <guid>https://janf.cc/posts/welcome/index.html</guid>
-  <pubDate>Thu, 05 Jun 2025 22:00:00 GMT</pubDate>
+  <guid>https://janf.cc/posts/2023-06-30_welcome/welcome_post.html</guid>
+  <pubDate>Thu, 29 Jun 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://janf.cc/posts/2023-06-30_welcome/welcome_thumbnail.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

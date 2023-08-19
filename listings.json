@@ -2,19 +2,21 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/welcome/index.html"
+      "/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_post.html",
+      "/posts/2023-06-30_welcome/welcome_post.html"
     ]
   },
   {
     "listing": "/notes.html",
     "items": [
-      "/notes/anaconda cheatsheet/index.html"
+      "/notes/2023-06-30_anaconda _cheatsheet/anaconda_cheatsheet.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
-      "/posts/welcome/index.html"
+      "/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_post.html",
+      "/posts/2023-06-30_welcome/welcome_post.html"
     ]
   }
 ]

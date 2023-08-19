@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://janf.cc/notes/anaconda cheatsheet/index.html</loc>
-    <lastmod>2023-08-11T15:20:55.336Z</lastmod>
+    <loc>https://janf.cc/notes/2023-06-30_anaconda _cheatsheet/anaconda_cheatsheet.html</loc>
+    <lastmod>2023-08-19T11:10:34.183Z</lastmod>
   </url>
   <url>
     <loc>https://janf.cc/blog.html</loc>
-    <lastmod>2023-08-11T15:20:54.968Z</lastmod>
+    <lastmod>2023-08-19T11:10:33.675Z</lastmod>
   </url>
   <url>
-    <loc>https://janf.cc/posts/welcome/index.html</loc>
-    <lastmod>2023-08-11T15:20:54.588Z</lastmod>
+    <loc>https://janf.cc/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_post.html</loc>
+    <lastmod>2023-08-19T11:10:32.467Z</lastmod>
+  </url>
+  <url>
+    <loc>https://janf.cc/posts/2023-06-30_welcome/welcome_post.html</loc>
+    <lastmod>2023-08-19T11:10:31.835Z</lastmod>
   </url>
   <url>
     <loc>https://janf.cc/notes.html</loc>
-    <lastmod>2023-08-11T15:20:54.412Z</lastmod>
+    <lastmod>2023-08-19T11:10:31.643Z</lastmod>
+  </url>
+  <url>
+    <loc>https://janf.cc/posts/2023-08-14_your_deep_learning_journey/code/cats_and_dogs.html</loc>
+    <lastmod>2023-08-19T11:10:32.115Z</lastmod>
+  </url>
+  <url>
+    <loc>https://janf.cc/posts/2023-08-14_your_deep_learning_journey/subsite/your_deep_learning_journey_questions.html</loc>
+    <lastmod>2023-08-19T11:10:32.919Z</lastmod>
   </url>
   <url>
     <loc>https://janf.cc/index.html</loc>
-    <lastmod>2023-08-11T15:20:54.788Z</lastmod>
+    <lastmod>2023-08-19T11:10:33.455Z</lastmod>
   </url>
   <url>
     <loc>https://janf.cc/about.html</loc>
-    <lastmod>2023-08-11T15:20:55.132Z</lastmod>
+    <lastmod>2023-08-19T11:10:33.835Z</lastmod>
   </url>
 </urlset>

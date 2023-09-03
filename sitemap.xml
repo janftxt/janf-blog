@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://janf.cc/notes/2023-06-30_anaconda _cheatsheet/anaconda_cheatsheet.html</loc>
-    <lastmod>2023-08-19T11:10:34.183Z</lastmod>
+    <lastmod>2023-09-03T21:08:43.392Z</lastmod>
   </url>
   <url>
     <loc>https://janf.cc/blog.html</loc>
-    <lastmod>2023-08-19T11:10:33.675Z</lastmod>
+    <lastmod>2023-09-03T21:08:42.712Z</lastmod>
   </url>
   <url>
-    <loc>https://janf.cc/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_post.html</loc>
-    <lastmod>2023-08-19T11:10:32.467Z</lastmod>
-  </url>
-  <url>
-    <loc>https://janf.cc/posts/2023-06-30_welcome/welcome_post.html</loc>
-    <lastmod>2023-08-19T11:10:31.835Z</lastmod>
-  </url>
-  <url>
-    <loc>https://janf.cc/notes.html</loc>
-    <lastmod>2023-08-19T11:10:31.643Z</lastmod>
-  </url>
-  <url>
-    <loc>https://janf.cc/posts/2023-08-14_your_deep_learning_journey/code/cats_and_dogs.html</loc>
-    <lastmod>2023-08-19T11:10:32.115Z</lastmod>
+    <loc>https://janf.cc/posts/2023-08-18_from_model_to_production/subsite/from_model_to_production_questions.html</loc>
+    <lastmod>2023-09-03T21:08:42.232Z</lastmod>
   </url>
   <url>
     <loc>https://janf.cc/posts/2023-08-14_your_deep_learning_journey/subsite/your_deep_learning_journey_questions.html</loc>
-    <lastmod>2023-08-19T11:10:32.919Z</lastmod>
+    <lastmod>2023-09-03T21:08:41.564Z</lastmod>
+  </url>
+  <url>
+    <loc>https://janf.cc/posts/2023-06-30_welcome/welcome_post.html</loc>
+    <lastmod>2023-09-03T21:08:40.756Z</lastmod>
+  </url>
+  <url>
+    <loc>https://janf.cc/notes.html</loc>
+    <lastmod>2023-09-03T21:08:40.584Z</lastmod>
+  </url>
+  <url>
+    <loc>https://janf.cc/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_post.html</loc>
+    <lastmod>2023-09-03T21:08:41.104Z</lastmod>
+  </url>
+  <url>
+    <loc>https://janf.cc/posts/2023-08-18_from_model_to_production/from_model_to_production_post.html</loc>
+    <lastmod>2023-09-03T21:08:41.848Z</lastmod>
   </url>
   <url>
     <loc>https://janf.cc/index.html</loc>
-    <lastmod>2023-08-19T11:10:33.455Z</lastmod>
+    <lastmod>2023-09-03T21:08:42.480Z</lastmod>
   </url>
   <url>
     <loc>https://janf.cc/about.html</loc>
-    <lastmod>2023-08-19T11:10:33.835Z</lastmod>
+    <lastmod>2023-09-03T21:08:42.872Z</lastmod>
   </url>
 </urlset>

@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -163,18 +197,15 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
   <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a>
   <ul class="collapse">
-  <li><a href="#what-is-machine-learning" id="toc-what-is-machine-learning" class="nav-link" data-scroll-target="#what-is-machine-learning">What is machine learning</a></li>
-  <li><a href="#what-is-deep-learning" id="toc-what-is-deep-learning" class="nav-link" data-scroll-target="#what-is-deep-learning">What is deep learning</a></li>
-  <li><a href="#why-are-neural-network-great-for-machine-deep-learning" id="toc-why-are-neural-network-great-for-machine-deep-learning" class="nav-link" data-scroll-target="#why-are-neural-network-great-for-machine-deep-learning">Why are neural network great for machine / deep learning</a></li>
-  <li><a href="#modern-deep-learning-loop-and-jargon" id="toc-modern-deep-learning-loop-and-jargon" class="nav-link" data-scroll-target="#modern-deep-learning-loop-and-jargon">Modern Deep Learning Loop and Jargon</a></li>
-  <li><a href="#limitations-inherent-to-machine-learning" id="toc-limitations-inherent-to-machine-learning" class="nav-link" data-scroll-target="#limitations-inherent-to-machine-learning">Limitations Inherent to Machine Learning</a></li>
-  <li><a href="#classification-and-regression" id="toc-classification-and-regression" class="nav-link" data-scroll-target="#classification-and-regression">Classification and Regression</a></li>
-  <li><a href="#what-is-overfitting" id="toc-what-is-overfitting" class="nav-link" data-scroll-target="#what-is-overfitting">What is Overfitting</a></li>
-  <li><a href="#training-set-validation-sets-and-test-sets" id="toc-training-set-validation-sets-and-test-sets" class="nav-link" data-scroll-target="#training-set-validation-sets-and-test-sets">Training Set, Validation Sets and Test Sets</a></li>
-  <li><a href="#what-is-a-cnn-convolutional-neural-network" id="toc-what-is-a-cnn-convolutional-neural-network" class="nav-link" data-scroll-target="#what-is-a-cnn-convolutional-neural-network">What is a CNN (Convolutional neural network)</a></li>
-  <li><a href="#pertrained-model-and-fine-tuning" id="toc-pertrained-model-and-fine-tuning" class="nav-link" data-scroll-target="#pertrained-model-and-fine-tuning">Pertrained model and Fine-tuning</a></li>
+  <li><a href="#drivetrain-approach" id="toc-drivetrain-approach" class="nav-link" data-scroll-target="#drivetrain-approach">Drivetrain Approach</a></li>
+  <li><a href="#dataloader-dataloaders-datablock" id="toc-dataloader-dataloaders-datablock" class="nav-link" data-scroll-target="#dataloader-dataloaders-datablock">DataLoader, DataLoaders, DataBlock</a></li>
+  <li><a href="#data-augmentation" id="toc-data-augmentation" class="nav-link" data-scroll-target="#data-augmentation">Data Augmentation</a></li>
+  <li><a href="#clean-the-data-with-you-model" id="toc-clean-the-data-with-you-model" class="nav-link" data-scroll-target="#clean-the-data-with-you-model">Clean the Data with you Model</a></li>
+  <li><a href="#avoid-disasters" id="toc-avoid-disasters" class="nav-link" data-scroll-target="#avoid-disasters">Avoid Disasters</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -185,138 +216,123 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="from_model_to_production_thumbnail.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">fastai book chapter x - janf - 2023</figcaption>
+</figure>
+</div>
 <section id="intro" class="level1">
 <h1>Intro</h1>
-<p>This my summary of chapter 2 from the book ‘Deep Learning for Coders with fastai &amp; PyTorch’. Its divided in tow main sections:</p>
+<p>This my summary of chapter 2 from the book ‘Deep Learning for Coders with fastai &amp; PyTorch’.</p>
 <ul>
 <li>questions - question about the chapter</li>
 <li>key concepts - summarized key concepts of the chapter</li>
 </ul>
-<p>Links:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Links
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li><a href="https://www.fast.ai/">fastai</a></li>
-<li><a href="https://course.fast.ai/Resources/book.html">fastai book</a></li>
+<li>Homepage: <a href="https://www.fast.ai/">fastai hompage</a></li>
+<li>Online Book: <a href="https://course.fast.ai/Resources/book.html">fastai online book</a></li>
+<li>Author: <a href="https://jeremy.fast.ai/">jermey howard</a></li>
+<li>Author: <a href="https://sgugger.github.io/">sylvain gugger</a></li>
 </ul>
+</div>
+</div>
+</section>
+<section id="questions" class="level1">
+<h1>Questions</h1>
+<p>Questions about the chapter.</p>
+<p><a href="../../posts/2023-08-18_from_model_to_production/subsite/from_model_to_production_questions.html">Questions - Chapter 2 - Your deep learning journey</a></p>
+</section>
+<section id="code" class="level1">
+<h1>Code</h1>
+<p>Code from this chapter.</p>
+<p><a href="https://github.com/xjanfcc/fastai/blob/master/book/chapter_2_from_model_to_production/bears.ipynb">Code - Chapter 2 - From a model to production - Bears</a></p>
+<p><a href="https://github.com/xjanfcc/fastai/blob/master/course/part_1-2_deployment/dog_cats.ipynb">Code - Course 1-2 - Deployment - Dog or Cat</a></p>
+<p><a href="https://huggingface.co/spaces/xjanfcc/dog_cats/tree/main">Code - Course 1-2 - Deployment - Gradio Dog or Cat App Code</a></p>
+<p><a href="https://huggingface.co/spaces/xjanfcc/dog_cats">Code - Course 1-2 - Deployment - Gradio Dog or Cat App</a></p>
 </section>
 <section id="key-concepts" class="level1">
 <h1>Key Concepts</h1>
-<section id="what-is-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-machine-learning">What is machine learning</h2>
-<p>The idea is instead of telling the computer the exact steps required to solve a problem, show it examples of the problem to solve, and let it figure out how to solve it itself.</p>
+<p>Summarized key concepts ot this chapter.</p>
+<section id="drivetrain-approach" class="level2">
+<h2 class="anchored" data-anchor-id="drivetrain-approach">Drivetrain Approach</h2>
+<p>Data products get more and more complex so we sometimes lose sight of the real problem we are trying to solve. The Drivetrain Approach aims to better couple the data science to the real business needs/real world problem and to use data not just to generate more data but to use data to produce actionable outcomes.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="maschine_learning.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">training a machine learning model - fastai - 2023</figcaption>
+<p><img src="drivetrain_approach.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Drive Train Approach - Designing great data products</figcaption>
 </figure>
 </div>
+<ol type="1">
+<li>(Defined Objective) First we must define the objective / goal</li>
+<li>(Levers) Specify what inputs/levers of the system we control that influence the final outcome</li>
+<li>(Data) Determine what data to collect</li>
+<li>(Models) Building the predictive models</li>
+</ol>
+</section>
+<section id="dataloader-dataloaders-datablock" class="level2">
+<h2 class="anchored" data-anchor-id="dataloader-dataloaders-datablock">DataLoader, DataLoaders, DataBlock</h2>
 <ul>
-<li>weight assignment</li>
-<li>automatic means of testing the effectiveness</li>
-<li>current weight assignment in terms of actual performance</li>
-<li>mechanism for altering the weight assignment so as to maximize the performance</li>
+<li><b>DataBlock</b> is the data pipeline. A template that we create that has no data, but defines alle the context on how to work with it. For example, how to split the data, the data types of or features and targets/labels, how to extract the labels from the underlying data (folders).</li>
+<li><b>DataLoader</b> doesn’t care about preparing data, it expects the data ready to go and only cares about how to load the data (e.g.&nbsp;whether in parallel or in a single process) as well as feeding the data to the model in batches (i.e.&nbsp;batch size)</li>
+<li><b>DataLoaders</b> is a thin wrapper for more than one DataLoader.</li>
 </ul>
+<p>A DataLoaders, is a thin class that automatically generates multiple <b>DataLoader</b> objects based on the rules specified in our <b>DataBlock</b></p>
+<p>Example of a DataLoaders with a DataBlock Api:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bears <span class="op">=</span> DataBlock(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>blocks <span class="op">=</span>(ImageBlock, CategoryBlock),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>get_items<span class="op">=</span>get_image_files,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>splitter<span class="op">=</span>RandomSplitter(valid_pct<span class="op">=</span><span class="fl">0.2</span>, seed<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>get_y<span class="op">=</span>parent_label,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>item_tfms<span class="op">=</span>Resize(<span class="dv">128</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These are the main parameters of the DataBlock:</p>
+<ol type="1">
+<li>blocks: is where you define the types of input and output data your model will work with. The fist one is the independent (input) and the second one is dependent target. Usually you will have two input and output but you can have multiple input/output variables.</li>
+<li>get_items: tells fastai how and where to get the files/data when needed.</li>
+<li>splitter: how to split the data in training and validation set. Seeds are optional for replicability.</li>
+<li>get_y: how to extract the target/label/variable (dependent) from the data.</li>
+</ol>
 </section>
-<section id="what-is-deep-learning" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-deep-learning">What is deep learning</h2>
-<p>Deep learning is specialty within machine learning that uses neural networks with multiple layers.</p>
+<section id="data-augmentation" class="level2">
+<h2 class="anchored" data-anchor-id="data-augmentation">Data Augmentation</h2>
+<p>Data augmentation refers to creating random variations of our input data, such that they appear different but do not change the meaning of the data. Examples of common data augmentation techniques for images are rotation, flipping, perspective warping, brightness changes and contrast changes. Data augmentation is useful for the model to better understand the basic concept of what an object is and how the objects of interest are represented in images. Therefore, data augmentation allows machine learning models to generalize better. This is especially important when it can be slow and expensive to label data.</p>
 </section>
-<section id="why-are-neural-network-great-for-machine-deep-learning" class="level2">
-<h2 class="anchored" data-anchor-id="why-are-neural-network-great-for-machine-deep-learning">Why are neural network great for machine / deep learning</h2>
-<ul>
-<li>If you regard a neural network as a mathematical function, it turns out to be function that ist extremely flexible depending on its weights.</li>
-<li>A mathematical proof called the universal approximation theorem shows that this function can solve any problem to any level of accuracy.</li>
-<li>In neural network we can use stochastic gradient descent (SGD)</li>
-<li>To determine the actual performance we can define our models performance as its accuracy at predicting the correct answers.</li>
-</ul>
-</section>
-<section id="modern-deep-learning-loop-and-jargon" class="level2">
-<h2 class="anchored" data-anchor-id="modern-deep-learning-loop-and-jargon">Modern Deep Learning Loop and Jargon</h2>
+<section id="clean-the-data-with-you-model" class="level2">
+<h2 class="anchored" data-anchor-id="clean-the-data-with-you-model">Clean the Data with you Model</h2>
+<p>On method to look at your model is visualizing it in a confusion matrix:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="modern_deep_learning_loop.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">modern deep learning loop - fastai - 2023</figcaption>
+<p><img src="confusionmatrix.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">confusion matrix bears</figcaption>
 </figure>
 </div>
-<ul>
-<li><b>Architecture</b> The template of the model that we trying to fit, the actual mathematical function that we’re passing the input data and parameters to.</li>
-<li><b>Model</b> The combination of the architecture with a particular set of parameters.</li>
-<li><b>Label</b> The data that we trying to predict.</li>
-<li><b>Parameters</b> The values in the model that change what task it can do and that are updated through model training</li>
-<li><b>Predictions</b> The results of the model are called predictions. The predictions are calculated from the independent variable, which is the data not including the labels.</li>
-<li><b>Loss</b> Loss ist the measurement of the performance. The loss depends not only on the predictions, but also on the correct labels.</li>
-<li><b>Fit / Train</b> Update the parameters of the model such that the predictions of the model using the input data match the target labels.</li>
-<li><b>Epoch</b> One complete pass through the input data (training set)</li>
-</ul>
+<p>For this example the rows represent all the black, grizzly and teddy bears in our dataset, respectively. The columns represent the images that the model predicted as black, grizzly and teddy bears, respectively. Therefore, the diagonal of the matrix shows the images that were classified correctly, and the off-diagonal cells represent those that were classified incorrectly.</p>
+<p>A confusion matrix is helpful to see where exactly our errors occurring 1. You can see if there are datasets errors (images with no bears or entries labeled incorrectly) 2. Or you can see if there is problem with the model (images with unusual lighting or blurred images)</p>
+<p>The intuitive approach to doing data cleaning is to do it before you train a model. But you can also train a quick and simple model first, and then use it to help us with data cleaning. fastai includes a handy GUI for data cleaning called ImageClassifierCleaner that allows you to choose a category and the training versus validation set and view the highest-loss images (in order), along with menus to allow images to be selected for removal or relabeling:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cleaner <span class="op">=</span> ImageClassifierCleaner(learn)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cleaner</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="limitations-inherent-to-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="limitations-inherent-to-machine-learning">Limitations Inherent to Machine Learning</h2>
-<ul>
-<li>A model cannot be created without data.</li>
-<li>A model can learn to operate on only the patterns seen in the input data used to train it.</li>
-<li>This learning approach creates only predictions, not recommended actions.</li>
-<li>It’s not enough to just have examples of input data, we need labels for that data too.</li>
-</ul>
-</section>
-<section id="classification-and-regression" class="level2">
-<h2 class="anchored" data-anchor-id="classification-and-regression">Classification and Regression</h2>
-<ul>
-<li><b>Classification</b> A classification model is one that attempts to predict a class, or category. That is, it’s predicting from a number of discrete possibilities.</li>
-<li><b>Regression</b> A regression model is one that attempts to predict one or more numeric quantities, such as a temperature or a location.</li>
-</ul>
-</section>
-<section id="what-is-overfitting" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-overfitting">What is Overfitting</h2>
-<p>Overfitting is the single most important and challenging issue when training for all machine learning. Training a model in such a way that it remembers specific features of the input data, rather than generalizing well to data not seen during training.</p>
-</section>
-<section id="training-set-validation-sets-and-test-sets" class="level2">
-<h2 class="anchored" data-anchor-id="training-set-validation-sets-and-test-sets">Training Set, Validation Sets and Test Sets</h2>
-<ul>
-<li><b>Training set</b> The data used for fitting the model, does not include any data from the validation set. (If there is enough data 80% is used for training)</li>
-<li><b>Validation set</b> A set of data held out from training, used only for measuring how good the model is. (If there is enough data 20% is used for validation)</li>
-<li><b>Test set</b> As we hold the validation data back from the training process, we can hold back a test set data even from ourselves. It cannot be used to improve the model, it can only be used to evaluate the model at the very end. (Take out some data for testing and split the rest to 80% for training and 20% for validation)</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For decision makers it is important to unsure to rally understand what a test and validation set is. For example you should never give out all the data to an external vender. Allays hold some test data (test set) for your own validation of the final model.</p>
-</div>
-</div>
-</section>
-<section id="what-is-a-cnn-convolutional-neural-network" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-cnn-convolutional-neural-network">What is a CNN (Convolutional neural network)</h2>
-<p>Convolutional neural network, a type of neural network that works particularly well for computer vision tasks.</p>
-</section>
-<section id="pertrained-model-and-fine-tuning" class="level2">
-<h2 class="anchored" data-anchor-id="pertrained-model-and-fine-tuning">Pertrained model and Fine-tuning</h2>
-<p><b>Pretrained model</b> A pretrained model has weights already been trained on some other dataset. You should nearly always use a pretrained model, because it means the your model, before you’ve even shown it any of your data, is already very capable. For instance. parts of pretrained models will handle edge, gradient, and color detection. which are needed for many tasks.</p>
-<p><b>Transfer learning</b> Using a pretrained model for a task different to what it was originally trained for.</p>
-<p><b>Fine-tuning</b> A transfer learning technique where the parameters of a pretrained model are updated by training for additional epochs using a different task that used for pretraining.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Using a pretrained model is the most important method we have to allow us to train more accurate models, more quickly, with less data, and less time and money.</p>
-</div>
-</div>
-<p><br></p>
-<hr>
-<div class="quarto-figure quarto-figure-left">
+<section id="avoid-disasters" class="level2">
+<h2 class="anchored" data-anchor-id="avoid-disasters">Avoid Disasters</h2>
+<p>You should always have in mind that it’s difficult to understand the behavior of a deep learning model. In a neural network the behavior emerges from the models attempt to match the training data, rather than being exactly defined.</p>
+<p>One general problem is the out-of-domain data problem. That is to say, there may be data that our model sees in production that is very different from what it saw during training. There isn’t a complete technical solution to this problem, instead, we have to be careful about rolling out a deep learning model.</p>
+<p>Another problem ist a domain is a domain shift, whereby the type of data that our model sees changes over time. For instance, an insurance company may use a deep learning model arr part of its pricing and risk algorithm, but over time the types of customers the company attracts and the types of risks it represents may change so much that the original training data is no longer relevant.</p>
+<p>High-Level approach to mitigate the risks on a roll-out</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="your_deep_learning_journey_thumbnail.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption">fastai book chapter 1 - janf - 2023</figcaption>
+<p><img src="rollout.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Mitigate risk on rollout</figcaption>
 </figure>
 </div>
 

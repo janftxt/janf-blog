@@ -10,7 +10,172 @@
 <atom:link href="https://janf.cc/blog.xml" rel="self" type="application/rss+xml"/>
 <description>janf.cc</description>
 <generator>quarto-1.3.433</generator>
-<lastBuildDate>Sun, 13 Aug 2023 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 17 Aug 2023 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>fastai book chapter 2</title>
+  <dc:creator>janf </dc:creator>
+  <link>https://janf.cc/posts/2023-08-18_from_model_to_production/from_model_to_production_post.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://janf.cc/posts/2023-08-18_from_model_to_production/from_model_to_production_thumbnail.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">fastai book chapter x - janf - 2023</figcaption>
+</figure>
+</div>
+<section id="intro" class="level1">
+<h1>Intro</h1>
+<p>This my summary of chapter 2 from the book ‘Deep Learning for Coders with fastai &amp; PyTorch’.</p>
+<ul>
+<li>questions - question about the chapter</li>
+<li>key concepts - summarized key concepts of the chapter</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Links
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Homepage: <a href="https://www.fast.ai/">fastai hompage</a></li>
+<li>Online Book: <a href="https://course.fast.ai/Resources/book.html">fastai online book</a></li>
+<li>Author: <a href="https://jeremy.fast.ai/">jermey howard</a></li>
+<li>Author: <a href="https://sgugger.github.io/">sylvain gugger</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="questions" class="level1">
+<h1>Questions</h1>
+<p>Questions about the chapter.</p>
+<p><a href="../../posts/2023-08-18_from_model_to_production/subsite/from_model_to_production_questions.html">Questions - Chapter 2 - Your deep learning journey</a></p>
+</section>
+<section id="code" class="level1">
+<h1>Code</h1>
+<p>Code from this chapter.</p>
+<p><a href="https://github.com/xjanfcc/fastai/blob/master/book/chapter_2_from_model_to_production/bears.ipynb">Code - Chapter 2 - From a model to production - Bears</a></p>
+<p><a href="https://github.com/xjanfcc/fastai/blob/master/course/part_1-2_deployment/dog_cats.ipynb">Code - Course 1-2 - Deployment - Dog or Cat</a></p>
+<p><a href="https://huggingface.co/spaces/xjanfcc/dog_cats/tree/main">Code - Course 1-2 - Deployment - Gradio Dog or Cat App Code</a></p>
+<p><a href="https://huggingface.co/spaces/xjanfcc/dog_cats">Code - Course 1-2 - Deployment - Gradio Dog or Cat App</a></p>
+</section>
+<section id="key-concepts" class="level1">
+<h1>Key Concepts</h1>
+<p>Summarized key concepts ot this chapter.</p>
+<section id="drivetrain-approach" class="level2">
+<h2 class="anchored" data-anchor-id="drivetrain-approach">Drivetrain Approach</h2>
+<p>Data products get more and more complex so we sometimes lose sight of the real problem we are trying to solve. The Drivetrain Approach aims to better couple the data science to the real business needs/real world problem and to use data not just to generate more data but to use data to produce actionable outcomes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://janf.cc/posts/2023-08-18_from_model_to_production/drivetrain_approach.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Drive Train Approach - Designing great data products</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li>(Defined Objective) First we must define the objective / goal</li>
+<li>(Levers) Specify what inputs/levers of the system we control that influence the final outcome</li>
+<li>(Data) Determine what data to collect</li>
+<li>(Models) Building the predictive models</li>
+</ol>
+</section>
+<section id="dataloader-dataloaders-datablock" class="level2">
+<h2 class="anchored" data-anchor-id="dataloader-dataloaders-datablock">DataLoader, DataLoaders, DataBlock</h2>
+<ul>
+<li><b>DataBlock</b> is the data pipeline. A template that we create that has no data, but defines alle the context on how to work with it. For example, how to split the data, the data types of or features and targets/labels, how to extract the labels from the underlying data (folders).</li>
+<li><b>DataLoader</b> doesn’t care about preparing data, it expects the data ready to go and only cares about how to load the data (e.g.&nbsp;whether in parallel or in a single process) as well as feeding the data to the model in batches (i.e.&nbsp;batch size)</li>
+<li><b>DataLoaders</b> is a thin wrapper for more than one DataLoader.</li>
+</ul>
+<p>A DataLoaders, is a thin class that automatically generates multiple <b>DataLoader</b> objects based on the rules specified in our <b>DataBlock</b></p>
+<p>Example of a DataLoaders with a DataBlock Api:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1">bears <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> DataBlock(</span>
+<span id="cb1-2">blocks <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(ImageBlock, CategoryBlock),</span>
+<span id="cb1-3">get_items<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>get_image_files,</span>
+<span id="cb1-4">splitter<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>RandomSplitter(valid_pct<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>, seed<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span>),</span>
+<span id="cb1-5">get_y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>parent_label,</span>
+<span id="cb1-6">item_tfms<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>Resize(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">128</span>)</span>
+<span id="cb1-7">)</span></code></pre></div>
+<p>These are the main parameters of the DataBlock:</p>
+<ol type="1">
+<li>blocks: is where you define the types of input and output data your model will work with. The fist one is the independent (input) and the second one is dependent target. Usually you will have two input and output but you can have multiple input/output variables.</li>
+<li>get_items: tells fastai how and where to get the files/data when needed.</li>
+<li>splitter: how to split the data in training and validation set. Seeds are optional for replicability.</li>
+<li>get_y: how to extract the target/label/variable (dependent) from the data.</li>
+</ol>
+</section>
+<section id="data-augmentation" class="level2">
+<h2 class="anchored" data-anchor-id="data-augmentation">Data Augmentation</h2>
+<p>Data augmentation refers to creating random variations of our input data, such that they appear different but do not change the meaning of the data. Examples of common data augmentation techniques for images are rotation, flipping, perspective warping, brightness changes and contrast changes. Data augmentation is useful for the model to better understand the basic concept of what an object is and how the objects of interest are represented in images. Therefore, data augmentation allows machine learning models to generalize better. This is especially important when it can be slow and expensive to label data.</p>
+</section>
+<section id="clean-the-data-with-you-model" class="level2">
+<h2 class="anchored" data-anchor-id="clean-the-data-with-you-model">Clean the Data with you Model</h2>
+<p>On method to look at your model is visualizing it in a confusion matrix:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://janf.cc/posts/2023-08-18_from_model_to_production/confusionmatrix.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">confusion matrix bears</figcaption>
+</figure>
+</div>
+<p>For this example the rows represent all the black, grizzly and teddy bears in our dataset, respectively. The columns represent the images that the model predicted as black, grizzly and teddy bears, respectively. Therefore, the diagonal of the matrix shows the images that were classified correctly, and the off-diagonal cells represent those that were classified incorrectly.</p>
+<p>A confusion matrix is helpful to see where exactly our errors occurring 1. You can see if there are datasets errors (images with no bears or entries labeled incorrectly) 2. Or you can see if there is problem with the model (images with unusual lighting or blurred images)</p>
+<p>The intuitive approach to doing data cleaning is to do it before you train a model. But you can also train a quick and simple model first, and then use it to help us with data cleaning. fastai includes a handy GUI for data cleaning called ImageClassifierCleaner that allows you to choose a category and the training versus validation set and view the highest-loss images (in order), along with menus to allow images to be selected for removal or relabeling:</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">cleaner <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> ImageClassifierCleaner(learn)</span>
+<span id="cb2-2">cleaner</span></code></pre></div>
+</section>
+<section id="avoid-disasters" class="level2">
+<h2 class="anchored" data-anchor-id="avoid-disasters">Avoid Disasters</h2>
+<p>You should always have in mind that it’s difficult to understand the behavior of a deep learning model. In a neural network the behavior emerges from the models attempt to match the training data, rather than being exactly defined.</p>
+<p>One general problem is the out-of-domain data problem. That is to say, there may be data that our model sees in production that is very different from what it saw during training. There isn’t a complete technical solution to this problem, instead, we have to be careful about rolling out a deep learning model.</p>
+<p>Another problem ist a domain is a domain shift, whereby the type of data that our model sees changes over time. For instance, an insurance company may use a deep learning model arr part of its pricing and risk algorithm, but over time the types of customers the company attracts and the types of risks it represents may change so much that the original training data is no longer relevant.</p>
+<p>High-Level approach to mitigate the risks on a roll-out</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://janf.cc/posts/2023-08-18_from_model_to_production/rollout.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Mitigate risk on rollout</figcaption>
+</figure>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>fastai</category>
+  <category>deeplearning</category>
+  <category>self-study</category>
+  <guid>https://janf.cc/posts/2023-08-18_from_model_to_production/from_model_to_production_post.html</guid>
+  <pubDate>Thu, 17 Aug 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://janf.cc/posts/2023-08-18_from_model_to_production/from_model_to_production_thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>fastai book chapter 1</title>
   <dc:creator>janf </dc:creator>
@@ -60,7 +225,8 @@ Links
 <section id="code" class="level1">
 <h1>Code</h1>
 <p>Code from this chapter.</p>
-<p><a href="../../posts/2023-08-14_your_deep_learning_journey/code/cats_and_dogs.html">Code - Chapter 1 - Your deep learning journey</a></p>
+<p><a href="https://github.com/xjanfcc/fastai/blob/master/book/chapter_1_your_deep_learning_practice/cats_and_dogs.ipynb">Code - Chapter 1 - Your deep learning journey - Is this a cat</a></p>
+<p><a href="https://github.com/xjanfcc/fastai/blob/master/course/part_1-1_getting_started/is_it_a_bird.ipynb">Code - Course 1-1 - Getting Started - Is it a bird</a></p>
 </section>
 <section id="key-concepts" class="level1">
 <h1>Key Concepts</h1>
@@ -150,7 +316,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For decision makers it is important to unsure to rally understand what a test and validation set is. For example you should never give out all the data to an external vender. Allays hold some test data (test set) for your own validation of the final model.</p>
+<p>For decision makers it is important to unsure to rally understand what a test and validation set is. For example you should never give out all the data to an external vender. Always hold some test data (test set) for your own validation of the final model.</p>
 </div>
 </div>
 </section>

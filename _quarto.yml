@@ -20,7 +20,7 @@ website:
       - icon: github
         href: https://github.com/xjanfcc
       - icon: twitter
-      href: https://twitter.com/xjanfcc
+        href: https://twitter.com/xjanfcc
     
 format:
   html:

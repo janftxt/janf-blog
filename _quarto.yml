@@ -18,9 +18,9 @@ website:
         file: about.qmd
     right:
       - icon: github
-        href: https://github.com/janfdev
+        href: https://github.com/xjanfcc
       - icon: twitter
-        href: https://twitter.com/janfdev
+      href: https://twitter.com/xjanfcc
     
 format:
   html:

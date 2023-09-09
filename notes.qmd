@@ -1,7 +1,9 @@
 ---
 title: "Notes"
 listing:
-  contents: notes
+  contents: 
+    - 'notes/*/*_note.qmd'
+    - 'notes/*/*_note.ipynb'
   feed: true
   sort: 
     - "date desc"

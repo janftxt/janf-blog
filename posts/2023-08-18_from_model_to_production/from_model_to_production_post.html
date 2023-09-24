@@ -8,9 +8,9 @@
 
 <meta name="author" content="janf">
 <meta name="dcterms.date" content="2023-08-18">
-<meta name="description" content="from model to production">
+<meta name="description" content="fastai book chapter 2">
 
-<title>janf - fastai book chapter 2</title>
+<title>janf - from model to production</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -153,10 +153,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">fastai book chapter 2</h1>
+      <h1 class="title">from model to production</h1>
                   <div>
         <div class="description">
-          from model to production
+          fastai book chapter 2
         </div>
       </div>
                           <div class="quarto-categories">
@@ -219,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <p><img src="from_model_to_production_thumbnail.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption class="figure-caption">fastai book chapter x - janf - 2023</figcaption>
+<figcaption class="figure-caption">fastai book chapter 2 - janf - 2023</figcaption>
 </figure>
 </div>
 <section id="intro" class="level1">
@@ -285,8 +285,8 @@ Links
 <section id="dataloader-dataloaders-datablock" class="level2">
 <h2 class="anchored" data-anchor-id="dataloader-dataloaders-datablock">DataLoader, DataLoaders, DataBlock</h2>
 <ul>
-<li><b>DataBlock</b> is the data pipeline. A template that we create that has no data, but defines alle the context on how to work with it. For example, how to split the data, the data types of or features and targets/labels, how to extract the labels from the underlying data (folders).</li>
-<li><b>DataLoader</b> doesn’t care about preparing data, it expects the data ready to go and only cares about how to load the data (e.g.&nbsp;whether in parallel or in a single process) as well as feeding the data to the model in batches (i.e.&nbsp;batch size)</li>
+<li><b>DataBlock</b> is the data pipeline. A template that we create that has no data, but defines all the context on how to work with it. For example, how to split the data, the data types of or features and targets/labels, how to extract the labels from the underlying data (folders).</li>
+<li><b>DataLoader</b> doesn’t care about preparing data, it expects the data is ready to go and only cares about how to load the data (e.g.&nbsp;whether in parallel or in a single process) as well as feeding the data to the model in batches (i.e.&nbsp;batch size)</li>
 <li><b>DataLoaders</b> is a thin wrapper for more than one DataLoader.</li>
 </ul>
 <p>A DataLoaders, is a thin class that automatically generates multiple <b>DataLoader</b> objects based on the rules specified in our <b>DataBlock</b></p>
@@ -300,7 +300,7 @@ Links
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>These are the main parameters of the DataBlock:</p>
 <ol type="1">
-<li>blocks: is where you define the types of input and output data your model will work with. The fist one is the independent (input) and the second one is dependent target. Usually you will have two input and output but you can have multiple input/output variables.</li>
+<li>blocks: is where you define the types of input and output data your model will work with. The first one is the independent (input) and the second one is dependent target. Usually you will have two input and output but you can have multiple input/output variables.</li>
 <li>get_items: tells fastai how and where to get the files/data when needed.</li>
 <li>splitter: how to split the data in training and validation set. Seeds are optional for replicability.</li>
 <li>get_y: how to extract the target/label/variable (dependent) from the data.</li>
@@ -329,7 +329,7 @@ Links
 <h2 class="anchored" data-anchor-id="avoid-disasters">Avoid Disasters</h2>
 <p>You should always have in mind that it’s difficult to understand the behavior of a deep learning model. In a neural network the behavior emerges from the models attempt to match the training data, rather than being exactly defined.</p>
 <p>One general problem is the out-of-domain data problem. That is to say, there may be data that our model sees in production that is very different from what it saw during training. There isn’t a complete technical solution to this problem, instead, we have to be careful about rolling out a deep learning model.</p>
-<p>Another problem ist a domain is a domain shift, whereby the type of data that our model sees changes over time. For instance, an insurance company may use a deep learning model arr part of its pricing and risk algorithm, but over time the types of customers the company attracts and the types of risks it represents may change so much that the original training data is no longer relevant.</p>
+<p>Another problem ist a domain is a domain shift, whereby the type of data that our model sees changes over time. For instance, an insurance company may use a deep learning model ass part of its pricing and risk algorithm, but over time the types of customers the company attracts and the types of risks it represents may change so much that the original training data is no longer relevant.</p>
 <p>High-Level approach to mitigate the risks on a roll-out</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

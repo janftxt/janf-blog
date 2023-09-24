@@ -10,11 +10,452 @@
 <atom:link href="https://janf.cc/notes.xml" rel="self" type="application/rss+xml"/>
 <description>janf.cc</description>
 <generator>quarto-1.3.433</generator>
-<lastBuildDate>Thu, 29 Jun 2023 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 08 Sep 2023 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>pytorch tensor cheatsheet</title>
+  <dc:creator>janf </dc:creator>
+  <link>https://janf.cc/notes/2023-09-09_pytorch_tensors/pytorch_tensor_note.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="what-are-tensors" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-tensors">What are Tensors</h2>
+<p>Tensors are a specialized data structure that are very similar to arrays and matrices. In PyTorch, we use tensors to encode the inputs and outputs of model, as well as the model’s parameters. Tensors are similar to NumPy’s arrays, expect that tensors can run on GPU or other hardware.</p>
+<p><a href="https://pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html">PyTorch Tensor</a></p>
+<p><a href="https://pytorch.org/tutorials/beginner/introyt/tensors_deeper_tutorial.html">Introduction to PyTorch Tensors</a></p>
+</section>
+<section id="import-torch" class="level2">
+<h2 class="anchored" data-anchor-id="import-torch">Import torch</h2>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> torch</span></code></pre></div>
+</div>
+</section>
+<section id="creating-tensors" class="level2">
+<h2 class="anchored" data-anchor-id="creating-tensors">Creating Tensors</h2>
+<p>Ways to create a tensor.</p>
+<section id="factory-method" class="level3">
+<h3 class="anchored" data-anchor-id="factory-method">Factory Method</h3>
+<p>Creating an empty tensor. <b>torch.empty()</b></p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># creating a tensor with 2-dimensions, 3 rows and 4 columns.</span></span>
+<span id="cb2-2">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.empty(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>)</span>
+<span id="cb2-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># by default tenors are 32-bit gloating point numbers.</span></span>
+<span id="cb2-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># torch.empty() allocates memory for the tensor but does not initialize it with any values</span></span>
+<span id="cb2-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(x)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[4.4510e+31, 4.5797e-41, 4.2956e+31, 4.5797e-41],
+        [4.4525e+31, 4.5797e-41, 4.3583e+31, 4.5797e-41],
+        [4.4433e+31, 4.5797e-41, 4.4434e+31, 4.5797e-41]])</code></pre>
+</div>
+</div>
+<p>Creating a tensor full of zeros. <b>torch.zeros()</b></p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># creating a tensor with 2-dimensions, 2 rows and 3 columns.</span></span>
+<span id="cb4-2">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.zeros(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb4-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(x)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[0., 0., 0.],
+        [0., 0., 0.]])</code></pre>
+</div>
+</div>
+<p>Creating a tensor full of ones. <b>torch.ones()</b></p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># creating a tensor with 2-dimensions, 3 rows and 1 column.</span></span>
+<span id="cb6-2">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.ones(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb6-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(x)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[1.],
+        [1.],
+        [1.]])</code></pre>
+</div>
+</div>
+<p>Creating a tenor full of random values. <b>torch.rand()</b></p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">torch.manual_seed(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">187</span>)</span>
+<span id="cb8-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># creating a tensor with 2-dimension, 2 rows and 3 columns.</span></span>
+<span id="cb8-3">random <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.rand(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb8-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(random)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[0.5305, 0.9925, 0.7754],
+        [0.9989, 0.3047, 0.9887]])</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-a-tensor-with-specific-data-directly" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-tensor-with-specific-data-directly">Creating a tensor with specific data directly</h3>
+<p><b>torch.tensor()</b> is the way to create a tenors if you have a Python tuple or list. Is creates a copy of the data as tensor.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.tensor(([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>],[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>]))</span>
+<span id="cb10-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(x.shape)</span>
+<span id="cb10-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(x)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>torch.Size([2, 3])
+tensor([[1, 2, 3],
+        [4, 5, 6]])</code></pre>
+</div>
+</div>
+</section>
+<section id="random-tensor-and-seeding" class="level3">
+<h3 class="anchored" data-anchor-id="random-tensor-and-seeding">Random tensor and seeding</h3>
+<p><b>torch.manual_seed()</b> sets the random seed to fixes the random outputs.</p>
+<p><b>torch.rand()</b> creates a random tensor.</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">torch.manual_seed(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">187</span>)</span>
+<span id="cb12-2">random <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.rand(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)</span>
+<span id="cb12-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(random)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[0.5305, 0.9925, 0.7754, 0.9989, 0.3047],
+        [0.9887, 0.3299, 0.2694, 0.5281, 0.8815],
+        [0.5275, 0.7802, 0.9964, 0.1060, 0.5047],
+        [0.6960, 0.1014, 0.8651, 0.9504, 0.7015],
+        [0.2917, 0.7787, 0.3808, 0.2624, 0.6519]])</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-tensor-with-the-shape-like" class="level3">
+<h3 class="anchored" data-anchor-id="creating-tensor-with-the-shape-like">Creating tensor with the shape like</h3>
+<p>Creating a tensor having the same number dimensions and the same number of cells in each dimension. - <b>torch.empty_like()</b> - <b>torch.zeros_like()</b> - <b>torch.ones_like()</b> - <b>torch.rand_like()</b></p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.empty(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb14-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(x)</span>
+<span id="cb14-3"></span>
+<span id="cb14-4">zeros_like_x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.zeros_like(x)</span>
+<span id="cb14-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(zeros_like_x)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[[0.0000e+00, 0.0000e+00, 0.0000e+00],
+         [0.0000e+00, 1.0754e-35, 0.0000e+00]],
+
+        [[3.5508e-36, 0.0000e+00, 4.4087e+31],
+         [4.5797e-41, 1.4013e-45, 0.0000e+00]]])
+tensor([[[0., 0., 0.],
+         [0., 0., 0.]],
+
+        [[0., 0., 0.],
+         [0., 0., 0.]]])</code></pre>
+</div>
+</div>
+</section>
+<section id="terminology-about-tensors-and-thier-number-of-dimensions" class="level3">
+<h3 class="anchored" data-anchor-id="terminology-about-tensors-and-thier-number-of-dimensions">Terminology about tensors and thier number of dimensions</h3>
+<ul>
+<li>0-dimensional tensor is called a scalar</li>
+<li>1-dimensional tensor is called a vector</li>
+<li>2-dimensional tensor is called a matrix</li>
+<li>3-dimensional or more tensor is called a tensor</li>
+</ul>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">d0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.ones(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb16-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'scalar (0-dim)'</span>)</span>
+<span id="cb16-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(d0)</span>
+<span id="cb16-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>)</span>
+<span id="cb16-5"></span>
+<span id="cb16-6">d1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.ones(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>)</span>
+<span id="cb16-7"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'vector 1-dim'</span>)</span>
+<span id="cb16-8"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(d1)</span>
+<span id="cb16-9"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>)</span>
+<span id="cb16-10"></span>
+<span id="cb16-11"></span>
+<span id="cb16-12">d2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.ones(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb16-13"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'matrix 2-dim'</span>)</span>
+<span id="cb16-14"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(d2)</span>
+<span id="cb16-15"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>)</span>
+<span id="cb16-16"></span>
+<span id="cb16-17">d3 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.ones(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>)</span>
+<span id="cb16-18"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'tensor 3-dim or more'</span>)</span>
+<span id="cb16-19"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(d3)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>scalar (0-dim)
+tensor([1.])
+
+
+vector 1-dim
+tensor([[1., 1., 1., 1.]])
+
+
+matrix 2-dim
+tensor([[1., 1., 1.],
+        [1., 1., 1.],
+        [1., 1., 1.]])
+
+
+tensor 3-dim or more
+tensor([[[1., 1., 1., 1.],
+         [1., 1., 1., 1.],
+         [1., 1., 1., 1.],
+         [1., 1., 1., 1.]],
+
+        [[1., 1., 1., 1.],
+         [1., 1., 1., 1.],
+         [1., 1., 1., 1.],
+         [1., 1., 1., 1.]],
+
+        [[1., 1., 1., 1.],
+         [1., 1., 1., 1.],
+         [1., 1., 1., 1.],
+         [1., 1., 1., 1.]],
+
+        [[1., 1., 1., 1.],
+         [1., 1., 1., 1.],
+         [1., 1., 1., 1.],
+         [1., 1., 1., 1.]]])</code></pre>
+</div>
+</div>
+<p><b>.shape</b> property gives list of the extant of each dimension</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.zeros(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb18-2">x.shape</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>torch.Size([2, 1])</code></pre>
+</div>
+</div>
+</section>
+<section id="tensor-data-types" class="level3">
+<h3 class="anchored" data-anchor-id="tensor-data-types">Tensor data types</h3>
+<p>One way to set the data type of a tensor is with an optional argument at creation.</p>
+<p>You can see the specified dtype by printing the tensor.</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1">a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.ones((<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>), dtype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>torch.int16)</span>
+<span id="cb20-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(a)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[1, 1, 1],
+        [1, 1, 1]], dtype=torch.int16)</code></pre>
+</div>
+</div>
+<p>Another way to set the datatype is with the <strong>.to()</strong> method. It converts a float64 and creates a int32 tensor.</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1">a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.ones((<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>), dtype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>torch.float64)</span>
+<span id="cb22-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(a)</span>
+<span id="cb22-3"></span>
+<span id="cb22-4">b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> a.to(torch.int32)</span>
+<span id="cb22-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(b)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[1., 1., 1.],
+        [1., 1., 1.]], dtype=torch.float64)
+tensor([[1, 1, 1],
+        [1, 1, 1]], dtype=torch.int32)</code></pre>
+</div>
+</div>
+<p>PyTorch datatypes:</p>
+<ul>
+<li>torch.bool</li>
+<li>torch.int8</li>
+<li>torch.uint8</li>
+<li>torch.int16</li>
+<li>torch.int32</li>
+<li>torch.int64</li>
+<li>torch.half</li>
+<li>torch.float</li>
+<li>torch.double</li>
+<li>torch.bfloat</li>
+</ul>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>cheatsheet</category>
+  <guid>https://janf.cc/notes/2023-09-09_pytorch_tensors/pytorch_tensor_note.html</guid>
+  <pubDate>Fri, 08 Sep 2023 22:00:00 GMT</pubDate>
+</item>
 <item>
   <title>anaconda cheatsheet</title>
   <dc:creator>janf </dc:creator>
-  <link>https://janf.cc/notes/2023-06-30_anaconda _cheatsheet/anaconda_cheatsheet.html</link>
+  <link>https://janf.cc/notes/2023-06-30_anaconda _cheatsheet/anaconda_cheatsheet_note.html</link>
   <description><![CDATA[ 
 
 
@@ -78,7 +519,13 @@ font-style: inherit;">&gt;</span> environment.yml</span></code></pre></div>
 </section>
 <section id="clone-existing-environment" class="level4">
 <h4 class="anchored" data-anchor-id="clone-existing-environment">Clone existing environment</h4>
-<pre><code>conda create --clone ENV_NAME --name NEW_ENV_NAME</code></pre>
+<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">conda</span> create <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--clone</span> ENV_NAME <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--name</span> NEW_ENV_NAME</span></code></pre></div>
 </section>
 </section>
 <section id="packages" class="level3">
@@ -156,7 +603,7 @@ font-style: inherit;">conda</span> update conda</span></code></pre></div>
 
  ]]></description>
   <category>cheatsheet</category>
-  <guid>https://janf.cc/notes/2023-06-30_anaconda _cheatsheet/anaconda_cheatsheet.html</guid>
+  <guid>https://janf.cc/notes/2023-06-30_anaconda _cheatsheet/anaconda_cheatsheet_note.html</guid>
   <pubDate>Thu, 29 Jun 2023 22:00:00 GMT</pubDate>
 </item>
 </channel>

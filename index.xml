@@ -12,7 +12,7 @@
 <generator>quarto-1.3.433</generator>
 <lastBuildDate>Thu, 17 Aug 2023 22:00:00 GMT</lastBuildDate>
 <item>
-  <title>fastai book chapter 2</title>
+  <title>from model to production</title>
   <dc:creator>janf </dc:creator>
   <link>https://janf.cc/posts/2023-08-18_from_model_to_production/from_model_to_production_post.html</link>
   <description><![CDATA[ 
@@ -23,7 +23,7 @@
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <p><img src="https://janf.cc/posts/2023-08-18_from_model_to_production/from_model_to_production_thumbnail.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption class="figure-caption">fastai book chapter x - janf - 2023</figcaption>
+<figcaption class="figure-caption">fastai book chapter 2 - janf - 2023</figcaption>
 </figure>
 </div>
 <section id="intro" class="level1">
@@ -89,8 +89,8 @@ Links
 <section id="dataloader-dataloaders-datablock" class="level2">
 <h2 class="anchored" data-anchor-id="dataloader-dataloaders-datablock">DataLoader, DataLoaders, DataBlock</h2>
 <ul>
-<li><b>DataBlock</b> is the data pipeline. A template that we create that has no data, but defines alle the context on how to work with it. For example, how to split the data, the data types of or features and targets/labels, how to extract the labels from the underlying data (folders).</li>
-<li><b>DataLoader</b> doesn’t care about preparing data, it expects the data ready to go and only cares about how to load the data (e.g.&nbsp;whether in parallel or in a single process) as well as feeding the data to the model in batches (i.e.&nbsp;batch size)</li>
+<li><b>DataBlock</b> is the data pipeline. A template that we create that has no data, but defines all the context on how to work with it. For example, how to split the data, the data types of or features and targets/labels, how to extract the labels from the underlying data (folders).</li>
+<li><b>DataLoader</b> doesn’t care about preparing data, it expects the data is ready to go and only cares about how to load the data (e.g.&nbsp;whether in parallel or in a single process) as well as feeding the data to the model in batches (i.e.&nbsp;batch size)</li>
 <li><b>DataLoaders</b> is a thin wrapper for more than one DataLoader.</li>
 </ul>
 <p>A DataLoaders, is a thin class that automatically generates multiple <b>DataLoader</b> objects based on the rules specified in our <b>DataBlock</b></p>
@@ -126,7 +126,7 @@ font-style: inherit;">128</span>)</span>
 <span id="cb1-7">)</span></code></pre></div>
 <p>These are the main parameters of the DataBlock:</p>
 <ol type="1">
-<li>blocks: is where you define the types of input and output data your model will work with. The fist one is the independent (input) and the second one is dependent target. Usually you will have two input and output but you can have multiple input/output variables.</li>
+<li>blocks: is where you define the types of input and output data your model will work with. The first one is the independent (input) and the second one is dependent target. Usually you will have two input and output but you can have multiple input/output variables.</li>
 <li>get_items: tells fastai how and where to get the files/data when needed.</li>
 <li>splitter: how to split the data in training and validation set. Seeds are optional for replicability.</li>
 <li>get_y: how to extract the target/label/variable (dependent) from the data.</li>
@@ -157,7 +157,7 @@ font-style: inherit;">=</span> ImageClassifierCleaner(learn)</span>
 <h2 class="anchored" data-anchor-id="avoid-disasters">Avoid Disasters</h2>
 <p>You should always have in mind that it’s difficult to understand the behavior of a deep learning model. In a neural network the behavior emerges from the models attempt to match the training data, rather than being exactly defined.</p>
 <p>One general problem is the out-of-domain data problem. That is to say, there may be data that our model sees in production that is very different from what it saw during training. There isn’t a complete technical solution to this problem, instead, we have to be careful about rolling out a deep learning model.</p>
-<p>Another problem ist a domain is a domain shift, whereby the type of data that our model sees changes over time. For instance, an insurance company may use a deep learning model arr part of its pricing and risk algorithm, but over time the types of customers the company attracts and the types of risks it represents may change so much that the original training data is no longer relevant.</p>
+<p>Another problem ist a domain is a domain shift, whereby the type of data that our model sees changes over time. For instance, an insurance company may use a deep learning model ass part of its pricing and risk algorithm, but over time the types of customers the company attracts and the types of risks it represents may change so much that the original training data is no longer relevant.</p>
 <p>High-Level approach to mitigate the risks on a roll-out</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -179,7 +179,7 @@ font-style: inherit;">=</span> ImageClassifierCleaner(learn)</span>
   <media:content url="https://janf.cc/posts/2023-08-18_from_model_to_production/from_model_to_production_thumbnail.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
-  <title>fastai book chapter 1</title>
+  <title>your deep learning journey</title>
   <dc:creator>janf </dc:creator>
   <link>https://janf.cc/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_post.html</link>
   <description><![CDATA[ 
@@ -258,7 +258,7 @@ Links
 <ul>
 <li>If you regard a neural network as a mathematical function, it turns out to be function that ist extremely flexible depending on its weights.</li>
 <li>A mathematical proof called the universal approximation theorem shows that this function can solve any problem to any level of accuracy.</li>
-<li>In neural network we can use stochastic gradient descent (SGD)</li>
+<li>In neural network we can use stochastic gradient descent (SGD).</li>
 <li>To determine the actual performance we can define our models performance as its accuracy at predicting the correct answers.</li>
 </ul>
 </section>
@@ -374,7 +374,7 @@ Note
 </div>
 <section id="this-is-the-first-post-on-this-blog.-seavas" class="level1">
 <h1>This is the first post on this blog. Seavas!</h1>
-<p>Hello, I’m <a href="../../about.html">Jan F.</a> from west austria 🇦🇹 . <br> I like to learn or create new things. Here i take notes about these processes or outcomes ✌️</p>
+<p>Hello, I’m <a href="../../about.html">Jan F.</a> from west austria 🇦🇹 . <br> I like to learn and create new things. Here i take notes about these processes or outcomes ✌️</p>
 
 
 </section>

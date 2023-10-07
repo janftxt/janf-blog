@@ -167,10 +167,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
   <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a>
   <ul class="collapse">
-  <li><a href="#why-do-data-ethics-matter" id="toc-why-do-data-ethics-matter" class="nav-link" data-scroll-target="#why-do-data-ethics-matter">Why do Data Ethics Matter?</a></li>
-  <li><a href="#topics-in-data-ethics" id="toc-topics-in-data-ethics" class="nav-link" data-scroll-target="#topics-in-data-ethics">Topics in Data Ethics</a></li>
+  <li><a href="#why-do-data-ethics-matter" id="toc-why-do-data-ethics-matter" class="nav-link" data-scroll-target="#why-do-data-ethics-matter">Why do Data Ethics Matter</a></li>
+  <li><a href="#topics-in-data-ethics" id="toc-topics-in-data-ethics" class="nav-link" data-scroll-target="#topics-in-data-ethics">Topics in Data Ethics</a>
+  <ul class="collapse">
+  <li><a href="#recourse-and-accountability" id="toc-recourse-and-accountability" class="nav-link" data-scroll-target="#recourse-and-accountability">Recourse and Accountability</a></li>
+  <li><a href="#feedback-loops" id="toc-feedback-loops" class="nav-link" data-scroll-target="#feedback-loops">Feedback Loops</a></li>
+  <li><a href="#bias" id="toc-bias" class="nav-link" data-scroll-target="#bias">Bias</a></li>
+  </ul></li>
+  <li><a href="#disinformation" id="toc-disinformation" class="nav-link" data-scroll-target="#disinformation">Disinformation</a></li>
   <li><a href="#addressing-ethical-issues" id="toc-addressing-ethical-issues" class="nav-link" data-scroll-target="#addressing-ethical-issues">Addressing Ethical Issues</a></li>
-  <li><a href="#regulation-rights-and-policy" id="toc-regulation-rights-and-policy" class="nav-link" data-scroll-target="#regulation-rights-and-policy">Regulation, Rights and Policy</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -209,6 +214,7 @@ Links
 <li>Online Book: <a href="https://course.fast.ai/Resources/book.html">fastai online book</a></li>
 <li>Author: <a href="https://jeremy.fast.ai/">jermey howard</a></li>
 <li>Author: <a href="https://sgugger.github.io/">sylvain gugger</a></li>
+<li>Co-Author of this chapter: <a href="https://rachel.fast.ai/about.html">rachel thomas</a></li>
 </ul>
 </div>
 </div>
@@ -226,16 +232,112 @@ Links
 <h1>Key Concepts</h1>
 <p>Summarized key concepts ot this chapter.</p>
 <section id="why-do-data-ethics-matter" class="level2">
-<h2 class="anchored" data-anchor-id="why-do-data-ethics-matter">Why do Data Ethics Matter?</h2>
+<h2 class="anchored" data-anchor-id="why-do-data-ethics-matter">Why do Data Ethics Matter</h2>
+<p>Everybody who is training models needs to consider how their models will be used, and consider how to best ensure that they are used as positively as possible. There are things you can do. And if you don’t do them things can go pretty badly. In general there are many negative societal consequences linked to AI an machine learning being observed today (bugs, flawed feedback loops, biases). It’not just a moral burden to consider sometimes there a legal burdens also. As example the first person who was jailed in the Volkswagen diesel scandal was the engineer not the manager. There is no final solution to ensure your work is used the right way. But with the right questions, you can at the very least ensure that the right issues are being considered. And you can so “no” to questionable pieces of work if their moral aspects don’t align.</p>
 </section>
 <section id="topics-in-data-ethics" class="level2">
 <h2 class="anchored" data-anchor-id="topics-in-data-ethics">Topics in Data Ethics</h2>
+<p>Data ethics is a big field. This summery doesn’t cover everything. The following are relevant topics to consider:</p>
+<section id="recourse-and-accountability" class="level3">
+<h3 class="anchored" data-anchor-id="recourse-and-accountability">Recourse and Accountability</h3>
+<p>In a complex system, it is easy for no one person to feel responsible for outcomes. While this understandable, it does not lead to good results. To hinder big errors you need Recourse and Accountability. An additional reason why recourse is so necessary is that data often contains errors. Mechanism for audits and error correction are crucial and should be considered by by practitioners.</p>
+</section>
+<section id="feedback-loops" class="level3">
+<h3 class="anchored" data-anchor-id="feedback-loops">Feedback Loops</h3>
+<p>Feedback loops describe how an algorithm can interact with its environment to make predictions that reinforce action taken in the real world, which lead to predictions even more pronounced in the sam direction. Part of this problem is the driving metric of the algorithm. An algorithm has a metric to optimize, it will do everything it can to optimize their result. This can lead to all kinds of edge cases, and humans interacting with a system will search for, find, and exploit thees edge cases and feedback loops for their advantage. This behavior of feedback loops and tendencies for optimization can happen. As practitioner you should keep that in your mind and either anticipate a feedback loop and take positive action to break it when it happens.</p>
+</section>
+<section id="bias" class="level3">
+<h3 class="anchored" data-anchor-id="bias">Bias</h3>
+<p>Bias in machine learning can come from multiple sources. In this section we summarize the types of bias that are most helpful for machine learning projects.</p>
+<ul>
+<li><i>Historical bias</i>
+<ul>
+<li>Historical bias comes from the fact that people are biased, processes are biased, and society is biased. It is fundamental, structural issue with the first step of the data generation process and can exit even give perfect sampling and feature selection.</li>
+</ul></li>
+<li><i>Measurement bias</i>
+<ul>
+<li>Measurement bias can occur when our model makes mistakes because we are measuring the wrong thing, or measuring it in the wrong way, or incorporating that measurement into the model inappropriately.</li>
+</ul></li>
+<li><i>Aggregation bias</i>
+<ul>
+<li>Aggregation bias occurs when models do not aggregate data in a way that incorporates all of the appropriate factors, or when a model does not include the necessary interaction terms, nonlinearities, or so froth.</li>
+</ul></li>
+<li><i>Representation bias</i>
+<ul>
+<li>When the model emphasize some property of the data as it seemingly has the closet correlation with the prediction, even though that might not be the truth.</li>
+</ul></li>
+<li><i>Evaluation bias</i>
+<ul>
+<li>Evaluation bias occurs when the benchmark data used for a particular task does not represent the use population. A model is optimized on its training data, but its quality is often measured on benchmarks. These benchmark encourages the development and deployment of models that perform well only on the subset of the data represented by the benchmark data.</li>
+</ul></li>
+<li><i>Deployment bias</i>
+<ul>
+<li>Deployment bias arises when there is a mismatch between the problem a model is intended to solve and the way in which it is actually used. This often occurs when a system is built an evaluated as if were fully autonomous, while in reality, it operates in a complicated sociotechnical system moderated by human decision-makers.</li>
+</ul></li>
+</ul>
+<p><i>Addressing different types of bias</i></p>
+<p>Different types of bias require different approaches for mitigation. All datasets contain bias. There is no such thing as a complete debiased dataset. Many researchers in the field have been converging on a set of proposals to enable better documentation of the decisions, context, and specifics about how and why a particular dataset was created, what scenarios it is appropriate to use in, and what the limitations are. This way, those using a particular dataset will not be caught off guard by its biases and limitations.</p>
+<p>Consider these points when working with machine learning algorithms:</p>
+<ul>
+<li>Machines learning can create feedback loops
+<ul>
+<li>Small amounts of bias can rapidly increase exponentially because of feedback loops.</li>
+</ul></li>
+<li>Machine learning can amplify bias
+<ul>
+<li>Human bias can lead to larger amounts of machine learning bias.</li>
+</ul></li>
+<li>Algorithms and humans are used differently
+<ul>
+<li>Human decisions makers and algorithmic decision makers are not used in a plug-and-play interchangeable way in practice. These examples are given in the list on the next page.</li>
+</ul></li>
+<li>Technology is power
+<ul>
+<li>And with that comes responsibility.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="disinformation" class="level2">
+<h2 class="anchored" data-anchor-id="disinformation">Disinformation</h2>
+<p>Disinformation is not necessarily about getting someone to believe something false, but rather often used to sow disharmony and uncertainty, and to get people to give up on seeking the truth. Is can often contain some seeds of truth, of half-truth taken out of context.</p>
+<p>With machine learning disinformation can be created cheaper and at a larger scale. Trough autogenerated text machine learning can be used to create coordinated campaigns of inauthentic behavior. For instance, fraudulent accounts may try to make it seem like many people hold a particular viewpoint.</p>
 </section>
 <section id="addressing-ethical-issues" class="level2">
 <h2 class="anchored" data-anchor-id="addressing-ethical-issues">Addressing Ethical Issues</h2>
-</section>
-<section id="regulation-rights-and-policy" class="level2">
-<h2 class="anchored" data-anchor-id="regulation-rights-and-policy">Regulation, Rights and Policy</h2>
+<p>The issues raised within data ethics are often complex and interdisciplinary, but it is crucial that we work to address them. So what can we do?</p>
+<p><i>Analyze a Project You Are Working On</i></p>
+<ul>
+<li>Consider the ethical implication of your work. Question to ask?
+<ul>
+<li>Should we even be doing this?</li>
+<li>What bias is in the data?</li>
+<li>Can the code and data be audited?</li>
+<li>What processes are in place to handle appeals or mistakes?</li>
+</ul></li>
+</ul>
+<p><i>Processes to Implement</i></p>
+<ul>
+<li>Concrete practices to implement to proactively search for ethical risks.
+<ul>
+<li>Expanding the ethical circle to include the perspectives of a variety of stakeholder.</li>
+<li>Consult interests, desires, skills, experiences, and values that maybe were simply assumed.</li>
+<li>Consider all stakeholders and their interests. Also the individuals that will be indirectly affected by our products.</li>
+<li>Also consider terrible people. Who might use this product in ways we didn’t expected.</li>
+</ul></li>
+</ul>
+<p><i>The Power of Diversity</i></p>
+<ul>
+<li>When everybody on a team has similar backgrounds, they are likely to have similar blind spots around ethical risks. Diversity can lead to problems being identified earlier, and a wider range of solutions being considered.</li>
+</ul>
+<p><i>Fairness, Accountability, and Transparency</i></p>
+<ul>
+<li>Treat fairness as a central concern rather than an afterthought. Don’t sidestep deeper questions about fairness, accountability and transparency.</li>
+</ul>
+<p><i>Regulation, Rights and Policy</i></p>
+<ul>
+<li>Policies are an appropriate tool for addressing data ethics issues when is likely that design fixes, self regulation and technical approaches to addressing problems, involving ethical uses of Machine Learning are not working. While such measures can be useful, they will not be sufficient to address the underlying problems that have led to our current state. For example, as long as it is incredibly profitable to create addictive technology, companies will continue to do so, regardless of whether this has the side effect of promoting conspiracy theories and polluting our information ecosystem. While individual designers may try to tweak product designs, we will not see substantial changes until the underlying profit incentives changes. Because of the above it is almost certain that policies will have to be created by government to address these issues.</li>
+</ul>
 
 
 </section>

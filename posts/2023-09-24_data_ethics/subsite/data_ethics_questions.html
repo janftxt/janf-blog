@@ -168,41 +168,107 @@ Links
 </div>
 </div>
 <p><b> Does ethics provide a list of “right answers”? </b></p>
-<p>x</p>
+<p>There is no list of do’s and dont’s. Ethics is complicated, and context-dependent. It involves the perspectives of many stakeholders. Ethics is a muscle that you have to develop and practice.</p>
 <p><b> How can working with people of different background help when considering ethical questions? </b></p>
-<p>x</p>
+<p>When everybody on a team has similar backgrounds, they are likely to have similar blind spots around ethical risks. Diversity can lad to problems being identified earlier, and a wider range of solutions being considers.</p>
 <p><b> What was the role of IBM Nazi Germany? Why did the company participate as they did? Why did the workers participate? </b></p>
-<p>x</p>
+<p>IBM supplied the Nazis with data tabulation products necessary to track the extermination of Jews and other groups on a massive scale. This was driven from the top of the company, with marketing to Hitler and his leadership team. Company President Thomas Watson personally approved the 1939 release of special IBM alphabetizing machines to help organize the deportation of Polish Jews. Hitler awarded Watson a special “Service to the Reich” medal in 1937.</p>
+<p>But it also happened throughout the organization. IBM and its subsidiaries provided regular training and maintenance on-site at the concentration camps: printing off cards, configuring machines, and repairing them as they broke frequently. IBM set up categorizations on their punch card system for the way that each person was killed, which group they were assigned to, and the logistical information necessary to track them through the vast Holocaust system. IBM’s code for Jews in the concentration camps was 8, where around 6,000,000 were killed. Its code for Romanis was 12 (they were labeled by the Nazis as “asocials”, with over 300,000 killed in the Zigeunerlager , or “Gypsy camp”). General executions were coded as 4, death in the gas chambers as 6.</p>
+<p>The marketers were just doing what they could to meet their business development goals. Edwin Black, author of “IBM and the Holocaust”, said: “To the blind technocrat, the means were more important than the ends. The destruction of the Jewish people became even less important because the invigorating nature of IBM’s technical achievement was only heightened by the fantastical profits to be made at a time when bread lines stretched across the world.”</p>
 <p><b> What was the role of the first person jailed in the VW diesel scandal? </b></p>
-<p>x</p>
+<p>The first person who was jailed as a result of the Volkswagen scandal, in which the car company was revealed to have cheated on its diesel emissions test, was not the manager who oversaw the project, or an executive at the holm of the company. It was one of the engineers, James Liang, who just did what he was told.</p>
 <p><b> What was the problem with a database of suspected gang members maintained by California law enforcement officials? </b></p>
-<p>x</p>
+<p>A database of suspected gang members maintained by california law enforcement officials was found to be full of errors, including 42 babies who had been added to the database when they were less than 1 year old (28 of whom were marked as admitting to being gang members). In this case, there was no process in place for correcting mistakes or removing people once they’d been added.</p>
 <p><b> Why did Youtube’s recommendation algorithm recommend videos of partially clothed children to pedophiles, even although no employee at Google programmed this feature? </b></p>
-<p>x</p>
+<p>YouTube recommendation algorithm had begun curating playlists for pedophiles, picking out innocent home videos that happened to contain prepubescent, partially clothed children.</p>
+<p>Part of the problem here is the centrality of metrics in driving a financially important system. When an algorithm has a metric to optimize, it will do everything it can to optimize that number. This tends to lead to all kinds of edge cases, and human interacting with a system will search for, find, and exploit these edge cases and feedback loops for their advantage.</p>
 <p><b> What are the problems with the centrality of metrics? </b></p>
-<p>x</p>
+<p>Part of the problem here is the centrality of metrics in driving a financially important system. When an algorithm has a metric to optimize, it will do everything it can to optimize that number. This tends to lead to all kinds of edge cases, and human interacting with a system will search for, find, and exploit these edge cases and feedback loops for their advantage.</p>
 <p><b> Why did Meetup.com not include gender in its recommendation system for tech meetups? </b></p>
-<p>x</p>
+<p>A engineer ar Meetup, discussed the example of men expressing more interest than women in tech meetups. Taking gender into account could therefore cause Meetups algorithm to suggest even fewer tech meetups to women.</p>
+<p>The team at meetup made the ethical decision for their recommendation algorithm to not create such a feedback loop, by explicitly not using gender for that part of their model.</p>
 <p><b> What are the six types of bias in machine learning, according to Suresh and Guttag? </b></p>
-<p>x</p>
+<ul>
+<li>Historical bias
+<ul>
+<li>Historical bias comes from the fact that people are biased, processes are biased, and society is biased. It is fundamental, structural issue with the first step of the data generation process and can exist even given perfect sampling and feature selection.</li>
+<li>Example: Any dataset involving humans can have this kind of bias: medical data, sales data, housing data, political data, and so on. Race bias is an example of historical bias.</li>
+</ul></li>
+<li>Measurement bias
+<ul>
+<li>Measurement bias can occur when our model makes mistakes because we are measuring the wrong thing, or measuring it in the wrong way, or incorporating that measurement into the model inappropriately.</li>
+<li>Example: An example is the stroke prediction model that includes information about if a person went to a doctor in it’s prediction if a patient had as stroke.</li>
+</ul></li>
+<li>Aggregation bias
+<ul>
+<li>Aggregation bias occurs when models do not aggregate data in a way that incorporates all of the appropriate factors, or when a model does not include the necessary interaction terms, nonlinearities, or so forth.</li>
+<li>Example: Is that effectiveness of treatments in medicine of some diseases differs on gender and ethnicity, but where those parameters are not present in the training data as they have been “aggregated away”.</li>
+</ul></li>
+<li>Representation bias
+<ul>
+<li>When the model emphasize some property of the data as it seemingly has the closest correlation with the prediction, even though that might not be the truth.</li>
+<li>Example: An example is the gender property in the occupation prediction model where the model only predicted 11.6% of surgeons to be women whereas the real number was 14.6%.</li>
+</ul></li>
+<li>Evaluation bias
+<ul>
+<li>Evaluation bias occurs when the benchmark data used for a particular task does not represent the use population. A model is optimized on its training data, but its quality is often measured on benchmarks. These benchmark encourages the development and deployment of models that perform well only on the subset of the data represented by the benchmark data.</li>
+<li>Example: Images of dark-skinned women comprise only 7.4% and 4.4% of common benchmark datasets Adience and IJB-A, and thus benchmarking on them failed to discover and penalize underperformance on this part of the population.</li>
+</ul></li>
+<li>Deployment bias
+<ul>
+<li>Deployment bias arises when there is a mismatch between the problem a model is intended to solve and the way in which it is actually used. This often occurs when a system is built and evaluated as if it were fully autonomous, while in reality, it operates in a complicated sociotechnical system moderated by human decision-makers.</li>
+<li>Example: Algorithmic risk assessment tools in the criminal justice context are models intended to predict a person’s likelihood of committing a future crime. In practice, however, these tools may be used in “off-label” ways, such as to help determine the length of a sentence.</li>
+</ul></li>
+</ul>
 <p><b> Give to examples of historical race bias in the US </b></p>
-<p>x</p>
+<p>When doctors were shown identical files, they were much less likely to recommend cardiac catherization (a helpful procedure) to Black patients.</p>
+<p>An all-white jury was 16% more likely to convict a Black defendant than a white one, but when a jury had at least one Black member, it convicted both at the same rate.</p>
 <p><b> Where are most images in ImageNet from? </b></p>
-<p>x</p>
+<p>The vast majority ot the images are from the US and other Western countries, leading to models trained on ImageNet performing worse an scenes from other countries and cultures. Research found that such models are worse at identifying household items (such as soap, spices, sofas or beds) from lower-income countries.</p>
 <p><b> In the paper “Does Machine Learning Automate Moral Hazard and Error” why is sinusitis found to predictive of a stroke? </b></p>
-<p>x</p>
+<p>Sinusitis has nothing to do with having a stroke. This was measurement bias. It occurs when our models make mistakes because we are measuring the wrong thing, or measuring it in the wrong way or incorporating that measurement into the model inappropriately. So in the Review they really measured who had symptoms, went to a doctor, fot the appropriate test, and received a diagnosis of stroke. Having a stroke is not the only thing correlated - it’s also being the kind of person who goes to the doctor and has access to healthcare.</p>
 <p><b> What is representation bias? </b></p>
-<p>x</p>
+<p>When the model emphasize some property of the data as it seemingly has the closest correlation with the prediction, even though that might not be the truth. An example is the gender property in the occupation prediction model where the model only predicted 11.6% of surgeons to be women whereas the real number was 14.6%.</p>
 <p><b> How are machines and people different, in terms of their use for making decisions? </b></p>
-<p>x</p>
+<ul>
+<li>Machine decisions are cheaper and more efficient (when they do the right thing).</li>
+<li>Humans use people and algorithms differently when getting advice on decisions.</li>
+<li>Algorithms are more likely to be implemented with a no-appeals process in place.</li>
+<li>Algorithms are often used at scale.</li>
+</ul>
 <p><b> Is disinformation the same as “fake news”? </b></p>
-<p>x</p>
+<p>Disinformation is not necessarily about getting someone to believe something false, but rather often used to sow disharmony and uncertainty, and to get people to give up on seeking the truth. It can often contain some seeds of truth, or half-truths taken out of context.</p>
 <p><b> Why is disinformation through auto-generated text particularly significant issues? </b></p>
-<p>x</p>
+<p>Disinformation through autogenerated text is a particularly significant issue, due to the greatly increased capability provided by deep learning.</p>
+<p>It is easier with machine learning to coordinate campaign of inauthentic behavior. For instance, fraudulent accounts may try to make it seem like many people hold a particular viewpoint.</p>
 <p><b> What are the five ethical lenses described by the Markkula Center? </b></p>
-<p>x</p>
+<p>These five foundational ethical lenses can help identify concrete issues:</p>
+<ul>
+<li>The rights approach
+<ul>
+<li>Which option best respects the rights of all who have a stake?</li>
+</ul></li>
+<li>The justice approach
+<ul>
+<li>Which option treats people equally or proportionately?</li>
+</ul></li>
+<li>The utilitarian approach
+<ul>
+<li>Which option will produce the most good and do the least harm?</li>
+</ul></li>
+<li>The common good approach
+<ul>
+<li>Which option best serves the community as a whole, not just some members?</li>
+</ul></li>
+<li>The virtue approach
+<ul>
+<li>Which option leads me to act as the sort of person I want to be?</li>
+</ul></li>
+</ul>
 <p><b> Where is policy an appropriate tool for addressing data ethics issues? </b></p>
-<p>x</p>
+<p>Policies are an appropriate tool for addressing data ethics issues when is likely that design fixes, self regulation and technical approaches to addressing problems, involving ethical uses of Machine Learning are not working.</p>
+<p>While such measures can be useful, they will not be sufficient to address the underlying problems that have led to our current state. For example, as long as it is incredibly profitable to create addictive technology, companies will continue to do so, regardless of whether this has the side effect of promoting conspiracy theories and polluting our information ecosystem. While individual designers may try to tweak product designs, we will not see substantial changes until the underlying profit incentives changes.</p>
+<p>Because of the above it is almost certain that policies will have to be created by government to address these issues.</p>
 
 
 

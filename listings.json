@@ -1,7 +1,8 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/index.html",
     "items": [
+      "/posts/2023-10-07_under_the_hood_training_a_classifier/under_the_hood_training_a_digit_classifier_post.html",
       "/posts/2023-09-24_data_ethics/data_ethics_post.html",
       "/posts/2023-08-18_from_model_to_production/from_model_to_production_post.html",
       "/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_post.html",
@@ -16,8 +17,9 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
+      "/posts/2023-10-07_under_the_hood_training_a_classifier/under_the_hood_training_a_digit_classifier_post.html",
       "/posts/2023-09-24_data_ethics/data_ethics_post.html",
       "/posts/2023-08-18_from_model_to_production/from_model_to_production_post.html",
       "/posts/2023-08-14_your_deep_learning_journey/your_deep_learning_journey_post.html",

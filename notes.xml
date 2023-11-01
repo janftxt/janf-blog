@@ -28,7 +28,7 @@
 </section>
 <section id="import-torch" class="level2">
 <h2 class="anchored" data-anchor-id="import-torch">Import torch</h2>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> torch</span></code></pre></div>
@@ -40,7 +40,7 @@ font-style: inherit;">import</span> torch</span></code></pre></div>
 <section id="factory-method" class="level3">
 <h3 class="anchored" data-anchor-id="factory-method">Factory Method</h3>
 <p>Creating an empty tensor. <b>torch.empty()</b></p>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># creating a tensor with 2-dimensions, 3 rows and 4 columns.</span></span>
@@ -61,13 +61,13 @@ font-style: inherit;"># torch.empty() allocates memory for the tensor but does n
 background-color: null;
 font-style: inherit;">print</span>(x)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>tensor([[0.0000e+00, 0.0000e+00, 7.7052e+31, 7.2148e+22],
-        [1.5766e-19, 1.0256e-08, 1.6802e-04, 3.1645e+12],
-        [2.7095e-09, 1.0504e-05, 1.0860e-05, 1.2398e+16]])</code></pre>
+<pre><code>tensor([[1.5766e-19, 1.0256e-08, 2.5783e-09, 3.0441e+12],
+        [4.3353e-08, 1.7188e-04, 6.7510e-07, 1.2611e+16],
+        [2.1707e-18, 7.0952e+22, 1.7748e+28, 1.8176e+31]])</code></pre>
 </div>
 </div>
 <p>Creating a tensor full of zeros. <b>torch.zeros()</b></p>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># creating a tensor with 2-dimensions, 2 rows and 3 columns.</span></span>
@@ -87,7 +87,7 @@ font-style: inherit;">print</span>(x)</span></code></pre></div>
 </div>
 </div>
 <p>Creating a tensor full of ones. <b>torch.ones()</b></p>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># creating a tensor with 2-dimensions, 3 rows and 1 column.</span></span>
@@ -108,7 +108,7 @@ font-style: inherit;">print</span>(x)</span></code></pre></div>
 </div>
 </div>
 <p>Creating a tenor full of random values. <b>torch.rand()</b></p>
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">torch.manual_seed(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">187</span>)</span>
@@ -134,7 +134,7 @@ font-style: inherit;">print</span>(random)</span></code></pre></div>
 <section id="creating-a-tensor-with-specific-data-directly" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-tensor-with-specific-data-directly">Creating a tensor with specific data directly</h3>
 <p><b>torch.tensor()</b> is the way to create a tenors if you have a Python tuple or list. Is creates a copy of the data as tensor.</p>
-<div class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> torch.tensor(([<span class="dv" style="color: #AD0000;
@@ -167,7 +167,7 @@ tensor([[1, 2, 3],
 <h3 class="anchored" data-anchor-id="random-tensor-and-seeding">Random tensor and seeding</h3>
 <p><b>torch.manual_seed()</b> sets the random seed to fixes the random outputs.</p>
 <p><b>torch.rand()</b> creates a random tensor.</p>
-<div class="cell" data-execution_count="25">
+<div class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">torch.manual_seed(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">187</span>)</span>
@@ -193,7 +193,7 @@ font-style: inherit;">print</span>(random)</span></code></pre></div>
 <section id="creating-tensor-with-the-shape-like" class="level3">
 <h3 class="anchored" data-anchor-id="creating-tensor-with-the-shape-like">Creating tensor with the shape like</h3>
 <p>Creating a tensor having the same number dimensions and the same number of cells in each dimension. - <b>torch.empty_like()</b> - <b>torch.zeros_like()</b> - <b>torch.ones_like()</b> - <b>torch.rand_like()</b></p>
-<div class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> torch.empty(<span class="dv" style="color: #AD0000;
@@ -214,11 +214,11 @@ font-style: inherit;">=</span> torch.zeros_like(x)</span>
 background-color: null;
 font-style: inherit;">print</span>(zeros_like_x)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>tensor([[[5.5265e-36, 0.0000e+00, 5.5271e-36],
-         [0.0000e+00, 1.5766e-19, 1.0256e-08]],
+<pre><code>tensor([[[0.0000e+00, 6.8664e-44, 2.7002e-06],
+         [2.6965e+23, 3.3429e+21, 1.0489e-08]],
 
-        [[1.6802e-04, 3.1645e+12, 2.7095e-09],
-         [1.0504e-05, 1.0860e-05, 1.2398e+16]]])
+        [[1.6505e-07, 1.7664e-04, 4.1532e-08],
+         [5.3928e-05, 1.6597e-07, 5.3130e-08]]])
 tensor([[[0., 0., 0.],
          [0., 0., 0.]],
 
@@ -235,7 +235,7 @@ tensor([[[0., 0., 0.],
 <li>2-dimensional tensor is called a matrix</li>
 <li>3-dimensional or more tensor is called a tensor</li>
 </ul>
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">d0 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> torch.ones(<span class="dv" style="color: #AD0000;
@@ -365,7 +365,7 @@ tensor([[[1., 1., 1., 1.],
 </div>
 </div>
 <p><b>.shape</b> property gives list of the extant of each dimension</p>
-<div class="cell" data-execution_count="28">
+<div class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> torch.zeros(<span class="dv" style="color: #AD0000;
@@ -374,7 +374,7 @@ font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>)</span>
 <span id="cb18-2">x.shape</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell-output cell-output-display" data-execution_count="49">
 <pre><code>torch.Size([2, 1])</code></pre>
 </div>
 </div>
@@ -383,7 +383,7 @@ font-style: inherit;">1</span>)</span>
 <h3 class="anchored" data-anchor-id="tensor-data-types">Tensor data types</h3>
 <p>One way to set the data type of a tensor is with an optional argument at creation.</p>
 <p>You can see the specified dtype by printing the tensor.</p>
-<div class="cell" data-execution_count="29">
+<div class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1">a <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> torch.ones((<span class="dv" style="color: #AD0000;
@@ -402,7 +402,7 @@ font-style: inherit;">print</span>(a)</span></code></pre></div>
 </div>
 </div>
 <p>Another way to set the datatype is with the <strong>.to()</strong> method. It converts a float64 and creates a int32 tensor.</p>
-<div class="cell" data-execution_count="30">
+<div class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1">a <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> torch.ones((<span class="dv" style="color: #AD0000;
@@ -447,7 +447,7 @@ tensor([[1, 1, 1],
 <section id="math-logic" class="level2">
 <h2 class="anchored" data-anchor-id="math-logic">Math &amp; Logic</h2>
 <p>Basic arithmetic with tensors.</p>
-<div class="cell" data-execution_count="31">
+<div class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1">twos <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> torch.ones(<span class="dv" style="color: #AD0000;
@@ -469,7 +469,7 @@ font-style: inherit;">print</span>(twos)</span></code></pre></div>
 </div>
 <p>Arithmetic operations between tensors and scalars, such as addition, subtraction, multiplication, division, and exponentiation are distributed over every element of the tensor.</p>
 <p>Operation between tow tensors also behave intuitively:</p>
-<div class="cell" data-execution_count="32">
+<div class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1">ones <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> torch.ones(<span class="dv" style="color: #AD0000;
@@ -488,7 +488,7 @@ font-style: inherit;">+</span> twos)</span></code></pre></div>
 </div>
 </div>
 <p>Tensors of dissimilar shape will throw a run-time error when calculated via binary operation.</p>
-<div class="cell" data-execution_count="33">
+<div class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># The following throws a run-time error. This is intentional.</span></span>
@@ -998,7 +998,7 @@ tensor([[1., 1.],
 <section id="moving-to-gpu" class="level2">
 <h2 class="anchored" data-anchor-id="moving-to-gpu">Moving to GPU</h2>
 <p>To check whether a GPU is available we can use <b>torch.cuda.is_available()</b></p>
-<div class="cell" data-execution_count="34">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb48" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">if</span> torch.cuda.is_available():</span>
@@ -1021,7 +1021,7 @@ font-style: inherit;">'Sorry, CPU only'</span>)</span></code></pre></div>
 </div>
 <p>By default new tensors are created on the CPU. You have to specify an optional device argument to use the tensor on a GPU.</p>
 <p>As an coding practice, specifying our devices everywhere with string constants is pretty fragile. You can create a device handle to pass it to you tensors.</p>
-<div class="cell" data-execution_count="35">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb50" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">if</span> torch.cuda.is_available():</span>
@@ -1070,7 +1070,7 @@ tensor([[0.2694, 0.5133],
 </div>
 </div>
 <p>With <b>.to()</b> you can move a tensor from CPU to a GPU or vise versa.</p>
-<div class="cell" data-execution_count="36">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb52" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1">y <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> torch.rand(<span class="dv" style="color: #AD0000;
@@ -1083,7 +1083,7 @@ background-color: null;
 font-style: inherit;">=</span> y.to(my_device)</span></code></pre></div>
 </div>
 <p>Tensors must be on the same device.</p>
-<div class="cell" data-execution_count="37">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb53" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> torch.rand(<span class="dv" style="color: #AD0000;
@@ -1121,6 +1121,311 @@ font-style: inherit;"># exception will be thrown</span></span></code></pre></div
 </section>
 <section id="manipulating-tensor-shapes" class="level2">
 <h2 class="anchored" data-anchor-id="manipulating-tensor-shapes">Manipulating Tensor Shapes</h2>
+<section id="changing-shape-by-squwwzing-and-unsqueezing" class="level3">
+<h3 class="anchored" data-anchor-id="changing-shape-by-squwwzing-and-unsqueezing">Changing Shape by Squwwzing And Unsqueezing</h3>
+<p><b>unsqueeze()</b> method adds a dimension of extent 1. unsqueesze(1) adds it as a new zeroth dimension.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1">a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.rand(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">266</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">266</span>)</span>
+<span id="cb55-2">b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> a.unsqueeze(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb55-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(a.shape)</span>
+<span id="cb55-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(b.shape)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>torch.Size([2, 266, 266])
+torch.Size([1, 2, 266, 266])</code></pre>
+</div>
+</div>
+<p>When we <b>squeeze()</b> a tensor, the dimensions of size 1 are removed. The elements of the original tensor are arranged with the remaining dimensions. For example, if the input tensor is of shape: (m×1×n×1) then the output tensor after squeeze will be of shape: (m×n).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1">a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.rand(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb57-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(a)</span>
+<span id="cb57-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(a.shape)</span>
+<span id="cb57-4"></span>
+<span id="cb57-5">b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> a.squeeze()</span>
+<span id="cb57-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(b)</span>
+<span id="cb57-7"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(b.shape)</span>
+<span id="cb57-8"></span>
+<span id="cb57-9">c <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.rand(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>)</span>
+<span id="cb57-10"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(c)</span>
+<span id="cb57-11"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(c.shape)</span>
+<span id="cb57-12"></span>
+<span id="cb57-13">d <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> c.squeeze()</span>
+<span id="cb57-14"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(d)</span>
+<span id="cb57-15"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(d.shape)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[0.5690, 0.0415],
+        [0.1794, 0.7428]])
+torch.Size([2, 2])
+tensor([[0.5690, 0.0415],
+        [0.1794, 0.7428]])
+torch.Size([2, 2])
+tensor([[0.1640, 0.1609, 0.6381, 0.9161, 0.5682, 0.7014, 0.7000, 0.8772, 0.6071,
+         0.9969, 0.1627, 0.6761, 0.0416, 0.7503, 0.2614, 0.9380, 0.2171, 0.8036,
+         0.7253, 0.2340]])
+torch.Size([1, 20])
+tensor([0.1640, 0.1609, 0.6381, 0.9161, 0.5682, 0.7014, 0.7000, 0.8772, 0.6071,
+        0.9969, 0.1627, 0.6761, 0.0416, 0.7503, 0.2614, 0.9380, 0.2171, 0.8036,
+        0.7253, 0.2340])
+torch.Size([20])</code></pre>
+</div>
+</div>
+</section>
+<section id="reshaping-a-tensor-without-changing-the-rank" class="level3">
+<h3 class="anchored" data-anchor-id="reshaping-a-tensor-without-changing-the-rank">Reshaping a Tensor without changing the rank</h3>
+<p>Changing a tensor without changing the rank.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1">t <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.tensor([</span>
+<span id="cb59-2">    [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>],</span>
+<span id="cb59-3">    [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>],</span>
+<span id="cb59-4">    [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span>
+<span id="cb59-5">], dtype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>torch.float32)</span>
+<span id="cb59-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(t)</span>
+<span id="cb59-7"></span>
+<span id="cb59-8">d <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> t.reshape([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>])</span>
+<span id="cb59-9"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(d)</span>
+<span id="cb59-10"></span>
+<span id="cb59-11">d <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> t.reshape([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>])</span>
+<span id="cb59-12"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(d)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[1., 1., 1., 1.],
+        [2., 2., 2., 2.],
+        [3., 3., 3., 3.]])
+tensor([[1., 1., 1., 1., 2., 2., 2., 2., 3., 3., 3., 3.]])
+tensor([[1., 1., 1., 1., 2., 2.],
+        [2., 2., 3., 3., 3., 3.]])</code></pre>
+</div>
+</div>
+<p>Using <b>reshape()</b> we can specify the row x column shape that we are seeking. All of the shapes have to account for the number of elements in the tensor.</p>
+</section>
+<section id="flatten-a-tensor" class="level3">
+<h3 class="anchored" data-anchor-id="flatten-a-tensor">Flatten a Tensor</h3>
+<p>A flatten operation on a tensor reshapes the tensor to have a shape that is equal to the number of elements contained in the tensor. This is the same thing as a 1d-array of elements.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1">t <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.tensor([</span>
+<span id="cb61-2">    [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>],</span>
+<span id="cb61-3">    [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>],</span>
+<span id="cb61-4">    [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span>
+<span id="cb61-5">], dtype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>torch.float32)</span>
+<span id="cb61-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(t.shape)</span>
+<span id="cb61-7"></span>
+<span id="cb61-8">d <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> t.flatten()</span>
+<span id="cb61-9"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(d)</span>
+<span id="cb61-10"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(d.shape)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>torch.Size([3, 4])
+tensor([1., 1., 1., 1., 2., 2., 2., 2., 3., 3., 3., 3.])
+torch.Size([12])</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="pytorch-numpy-bridge" class="level2">
+<h2 class="anchored" data-anchor-id="pytorch-numpy-bridge">Pytorch-Numpy Bridge</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb63-2"></span>
+<span id="cb63-3">numpy_array <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.ones((<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>))</span>
+<span id="cb63-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(numpy_array)</span>
+<span id="cb63-5"></span>
+<span id="cb63-6">pytorch_tensor <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.from_numpy(numpy_array)</span>
+<span id="cb63-7"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(pytorch_tensor)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1. 1. 1.]
+ [1. 1. 1.]]
+tensor([[1., 1., 1.],
+        [1., 1., 1.]], dtype=torch.float64)</code></pre>
+</div>
+</div>
+<p>PyTorch creates a tensor of the same shape and containing the same data as the NumPy array, going so far as to keep NumPys default 64bit float data type. The conversion can also go the other way:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1">pytorch_rand <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> torch.rand(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb65-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(pytorch_rand)</span>
+<span id="cb65-3"></span>
+<span id="cb65-4">numpy_rand <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pytorch_rand.numpy()</span>
+<span id="cb65-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(numpy_rand)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[0.1050, 0.5877, 0.4583],
+        [0.6130, 0.6209, 0.9512]])
+[[0.10500968 0.5877479  0.4582944 ]
+ [0.61297506 0.62093675 0.9512319 ]]</code></pre>
+</div>
+</div>
+<p>It is important to know that these converted objects are using the same underlying memory as thier source objects, meaning that changes to one are reflected in the other:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1">numpy_array[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">23</span></span>
+<span id="cb67-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(pytorch_tensor)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[ 1.,  1.,  1.],
+        [ 1., 23.,  1.]], dtype=torch.float64)</code></pre>
+</div>
+</div>
 
 
 </section>

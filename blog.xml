@@ -10,7 +10,75 @@
 <atom:link href="https://janf.cc/blog.xml" rel="self" type="application/rss+xml"/>
 <description>janf.cc</description>
 <generator>quarto-1.3.433</generator>
-<lastBuildDate>Sat, 23 Sep 2023 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 06 Oct 2023 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>under the hood: training a digit classifier</title>
+  <dc:creator>janf </dc:creator>
+  <link>https://janf.cc/posts/2023-10-07_under_the_hood_training_a_classifier/under_the_hood_training_a_digit_classifier_post.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://janf.cc/posts/2023-10-07_under_the_hood_training_a_classifier/under_the_hood_training_a_digit_classifier_thumbnail.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">fastai book chapter 4 - janf - 2023</figcaption>
+</figure>
+</div>
+<section id="intro" class="level1">
+<h1>Intro</h1>
+<p>This my summary of chapter 4 from the book “Deep Learning for Coders with fastai &amp; PyTorch”.</p>
+<ul>
+<li>questions - question about the chapter</li>
+<li>key concepts - summarized key concepts of the chapter</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Links
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Homepage: <a href="https://www.fast.ai/">fastai hompage</a></li>
+<li>Online Book: <a href="https://course.fast.ai/Resources/book.html">fastai online book</a></li>
+<li>Author: <a href="https://jeremy.fast.ai/">jermey howard</a></li>
+<li>Author: <a href="https://sgugger.github.io/">sylvain gugger</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="questions" class="level1">
+<h1>Questions</h1>
+<p>Questions about the chapter.</p>
+<p><a href="../../posts/2023-10-07_under_the_hood_training_a_classifier/subsite/under_the_hood_training_a_digit_classifier_questions.html">Questions - Chapter 4 - Under the hood: training a digit classifier</a></p>
+</section>
+<section id="code" class="level1">
+<h1>Code</h1>
+<p>x</p>
+</section>
+<section id="key-concepts" class="level1">
+<h1>Key Concepts</h1>
+<p>Summarized key concepts ot this chapter.</p>
+<section id="why-do-data-ethics-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-do-data-ethics-matter">Why do Data Ethics Matter</h2>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>fastai</category>
+  <category>deeplearning</category>
+  <category>self-study</category>
+  <guid>https://janf.cc/posts/2023-10-07_under_the_hood_training_a_classifier/under_the_hood_training_a_digit_classifier_post.html</guid>
+  <pubDate>Fri, 06 Oct 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://janf.cc/posts/2023-10-07_under_the_hood_training_a_classifier/under_the_hood_training_a_digit_classifier_thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>data ethics</title>
   <dc:creator>janf </dc:creator>
@@ -28,7 +96,7 @@
 </div>
 <section id="intro" class="level1">
 <h1>Intro</h1>
-<p>This my summary of chapter 3 from the book ‘Deep Learning for Coders with fastai &amp; PyTorch’.</p>
+<p>This my summary of chapter 3 from the book “Deep Learning for Coders with fastai &amp; PyTorch”.</p>
 <ul>
 <li>questions - question about the chapter</li>
 <li>key concepts - summarized key concepts of the chapter</li>
@@ -140,7 +208,8 @@ Links
 <section id="addressing-ethical-issues" class="level2">
 <h2 class="anchored" data-anchor-id="addressing-ethical-issues">Addressing Ethical Issues</h2>
 <p>The issues raised within data ethics are often complex and interdisciplinary, but it is crucial that we work to address them. So what can we do?</p>
-<p><i>Analyze a Project You Are Working On</i></p>
+<section id="analyze-a-project-you-are-working-on" class="level3">
+<h3 class="anchored" data-anchor-id="analyze-a-project-you-are-working-on">Analyze a Project You Are Working On</h3>
 <ul>
 <li>Consider the ethical implication of your work. Question to ask?
 <ul>
@@ -150,7 +219,9 @@ Links
 <li>What processes are in place to handle appeals or mistakes?</li>
 </ul></li>
 </ul>
-<p><i>Processes to Implement</i></p>
+</section>
+<section id="processes-to-implement" class="level3">
+<h3 class="anchored" data-anchor-id="processes-to-implement">Processes to Implement</h3>
 <ul>
 <li>Concrete practices to implement to proactively search for ethical risks.
 <ul>
@@ -160,20 +231,27 @@ Links
 <li>Also consider terrible people. Who might use this product in ways we didn’t expected.</li>
 </ul></li>
 </ul>
-<p><i>The Power of Diversity</i></p>
+</section>
+<section id="the-power-of-diversity" class="level3">
+<h3 class="anchored" data-anchor-id="the-power-of-diversity">The Power of Diversity</h3>
 <ul>
 <li>When everybody on a team has similar backgrounds, they are likely to have similar blind spots around ethical risks. Diversity can lead to problems being identified earlier, and a wider range of solutions being considered.</li>
 </ul>
-<p><i>Fairness, Accountability, and Transparency</i></p>
+</section>
+<section id="fairness-accountability-and-transparency" class="level3">
+<h3 class="anchored" data-anchor-id="fairness-accountability-and-transparency">Fairness, Accountability, and Transparency</h3>
 <ul>
 <li>Treat fairness as a central concern rather than an afterthought. Don’t sidestep deeper questions about fairness, accountability and transparency.</li>
 </ul>
-<p><i>Regulation, Rights and Policy</i></p>
+</section>
+<section id="regulation-rights-and-policy" class="level3">
+<h3 class="anchored" data-anchor-id="regulation-rights-and-policy">Regulation, Rights and Policy</h3>
 <ul>
 <li>Policies are an appropriate tool for addressing data ethics issues when is likely that design fixes, self regulation and technical approaches to addressing problems, involving ethical uses of Machine Learning are not working. While such measures can be useful, they will not be sufficient to address the underlying problems that have led to our current state. For example, as long as it is incredibly profitable to create addictive technology, companies will continue to do so, regardless of whether this has the side effect of promoting conspiracy theories and polluting our information ecosystem. While individual designers may try to tweak product designs, we will not see substantial changes until the underlying profit incentives changes. Because of the above it is almost certain that policies will have to be created by government to address these issues.</li>
 </ul>
 
 
+</section>
 </section>
 </section>
 
@@ -202,7 +280,7 @@ Links
 </div>
 <section id="intro" class="level1">
 <h1>Intro</h1>
-<p>This my summary of chapter 2 from the book ‘Deep Learning for Coders with fastai &amp; PyTorch’.</p>
+<p>This my summary of chapter 2 from the book “Deep Learning for Coders with fastai &amp; PyTorch”.</p>
 <ul>
 <li>questions - question about the chapter</li>
 <li>key concepts - summarized key concepts of the chapter</li>
@@ -369,7 +447,7 @@ font-style: inherit;">=</span> ImageClassifierCleaner(learn)</span>
 </div>
 <section id="intro" class="level1">
 <h1>Intro</h1>
-<p>This my summary of chapter 1 from the book ‘Deep Learning for Coders with fastai &amp; PyTorch’.</p>
+<p>This my summary of chapter 1 from the book “Deep Learning for Coders with fastai &amp; PyTorch”.</p>
 <ul>
 <li>questions - question about the chapter</li>
 <li>key concepts - summarized key concepts of the chapter</li>

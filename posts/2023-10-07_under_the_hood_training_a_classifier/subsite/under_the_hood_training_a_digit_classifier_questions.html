@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
+<link href="../../../images/janftxt_favicon.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -96,12 +131,12 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/xjanfcc" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/janftxt" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/xjanfcc" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/janftxt" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -167,18 +202,61 @@ Links
 </ul>
 </div>
 </div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><b> How is a grayscale image represented on a computer? How about a color image? </b></p>
-<p>x</p>
+<p>Images are represented by arrays with pixel values representing the content of the image. For greyscale images, a 2-dimentional array is used with the pixeles representing the grayscale values, with a range of 256 integers. A value of 0 would represent white and a value of 255 represent black, and different shades of greyscale in between. For color images, three color channels (red,green,blue) are typicall used, with a separate 256-range 2D array used for each channel. A pixel of 0 again represent white, with 255 representing solid red, green or blue. The 2D arrays from a final 3D array (rank 3 tensor) representing the color image.</p>
 <p><b> How are the files an folders in the MNIST_SAMPLE dataset structured? Why? </b></p>
-<p>x</p>
+<p>There are two subfolders, train and valid, the former contains the data for modeling training, the latter contains the data for validating model performance after each training step. Evaluating the model on the validation set serves tow purposes: a.) to report a human interpretable metric such as accuracy (in contract to the often abstract loss functions used for training), b.) to facilitate the detection of overfitting by evaluating the model on da dataset it hasn’t been trained on (in short, an overfitting model performs increasingly well on the training set but decreasingly so an the validation set). Of course, every practitioner could generate their own train/validation-split of the data. Public datasets are usually pre-split to simplifying comparing results between implementations/publications.</p>
 <p><b> Explain how the “pixel similarity” approach to classifying digits works. </b></p>
-<p>x</p>
+<p>In the pixel similarity approach, we generate an archetype for each class we want to identify. In our case, we want to distinguish images of 3’s from images of 7’s. We define the archetypical 3 as the pixel-wise mean values of all 3’s in the training set. Analog for the 7’s. You can visualize the tow archetypes and see that they are in fact blurred version of the number they represent. In order to tell if previously unseen image is a 3 or a 7, we calculate its distance to the tow archetypes (here: mean pixel-wise absolute difference). We say the new images are a 3 if the distance to the archetypical 3 is lower that tow the archetypical 7.</p>
 <p><b> What is a list comprehension? Create one now that selects odd numbers from a list and doubles them. </b></p>
-<p>x</p>
+<p>List (arrays in other programming languages) are often generated using a for-loop. A list comprehension in Python is condensing the creation of list using a for-loop into a single expression. List comprehension will also often include if clauses for filtering.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lst_in <span class="op">=</span> <span class="bu">range</span>(<span class="dv">10</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>lst_out <span class="op">=</span> [<span class="dv">2</span><span class="op">*</span>el <span class="cf">for</span> el <span class="kw">in</span> lst_in <span class="cf">if</span> el<span class="op">%</span><span class="dv">2</span><span class="op">==</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span> <span class="op">=</span> []</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> el <span class="kw">in</span> lst_in:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> el<span class="op">%</span><span class="dv">2</span><span class="op">==</span><span class="dv">1</span>:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        lst_out.append(<span class="dv">2</span><span class="op">*</span>el)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>lst_out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><b> What is a rank-3 tensor? </b></p>
-<p>x</p>
-<p><b> What is the difference between tensor rank and shape? How do you get the rank from the shape? </b></p>
-<p>x</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> torch.Tensor(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>))).view(<span class="dv">3</span>,<span class="dv">3</span>)<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[1., 2., 3.],
+        [4., 5., 6.],
+        [7., 8., 9.]])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> a</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[ 2.,  4.,  6.],
+        [ 8., 10., 12.],
+        [14., 16., 18.]])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>b[<span class="dv">1</span>:,<span class="dv">1</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>tensor([[10., 12.],
+        [16., 18.]])</code></pre>
+</div>
+</div>
+<p><b> What is broadcasting? </b></p>
+<p>Sientific/numerical Python packages like NumPy and PyTorch will often implement broadcasting that often makes code easier to write. In the case of PyTroch, tensor with maller rank are expanded to have the same size as the larger tensor. In this way, operations can be performed between tensor with different rank.</p>
+<p><b> Are metrics generally calculated using the trining set or the validation set? Why? </b></p>
+<p>Metrics are generally calculated on a validation set. As the validation set is unseen data for the model, evaluating the metrics on the validation set is better in order to determine if there is any overfitting and how well the model might generalize if given similar data.</p>
+<p><b> What is SGD? </b></p>
+<p>SGD, or stochastic gradient decent, is an optimization algorithm. Specifically, SGD is an algorithm that will update the parameters of a model in order to minimize a given loss function that was evaluated on the prediction and target. The key idea behind SGD (and many optimization algorithms, for that matter) is that the gradient of the loss function provides and indication of how that loss function changes in the parameter space, which we use to determine how best to update the parameters in order to minimize the loss function. This is what SGD does.</p>
+<p><b> Why does SGD use mini-batches? </b></p>
+<p>We need to calculate our loss function (and our gradient) on one or more data points. We cannot calculate on the whole dataset due to compute limitations and time constraints. If we iterated through each data point, however, the gradients will be unstable and imprecise, and is not suitable for training. As a compromise, we calculate the average loss for a small subset of the dataset at a time. This subset is called a mini-batch. Using a mini-batches are also more computationally efficient that single items on a GPU.</p>
 
 
 

@@ -1,16 +1,16 @@
 ---
-title: "janf"
+title: ""
 about:
   id: hero-heading
   template: trestles
-  image: images/janfprofile.jpg
+  image: images/janftxt.png
   links:
     - icon: twitter
       text: twitter
-      href: https://twitter.com/xjanfcc
+      href: https://twitter.com/janftxt
     - icon: github
       text: Github
-      href: https://github.com/xjanfcc
+      href: https://github.com/janftxt
 ---
 :::{#hero-heading}
 

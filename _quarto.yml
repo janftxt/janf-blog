@@ -8,6 +8,7 @@ website:
   site-url: https://janf.cc
   description: "janf.cc"
   search: true
+  favicon: images/janftxt_favicon.png
   navbar:
     left:
       - text: "Blog"
@@ -18,9 +19,9 @@ website:
         file: about.qmd
     right:
       - icon: github
-        href: https://github.com/xjanfcc
+        href: https://github.com/janftxt
       - icon: twitter
-        href: https://twitter.com/xjanfcc
+        href: https://twitter.com/janftxt
     
 format:
   html:

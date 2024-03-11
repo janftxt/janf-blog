@@ -23,7 +23,6 @@ title-block-banner: false
 ---
 Hello, I'm [jan f.](about.qmd) from west austria 🇦🇹 .<br> I like to learn and create new things. Here i take notes about these processes or outcomes ✌️
 
-![zion - janf - 2022](images/mountain.jpg){fig-align="left" width=100%}
 
 ## blog posts
 ::: {#blog-listings}

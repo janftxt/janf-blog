@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="janf">
-<meta name="dcterms.date" content="2023-08-14">
-<meta name="description" content="fastai book chapter 1">
+<meta name="dcterms.date" content="2024-03-28">
+<meta name="description" content="a tiny scalar-valued autograd engine and a neural net libarary on top of it with PyTorch-like API">
 
-<title>janf - your deep learning journey</title>
+<title>janf - karpathy micrograd</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -127,14 +161,14 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">your deep learning journey</h1>
+      <h1 class="title">karpathy micrograd</h1>
                   <div>
         <div class="description">
-          fastai book chapter 1
+          a tiny scalar-valued autograd engine and a neural net libarary on top of it with PyTorch-like API
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">fastai</div>
+                <div class="quarto-category">karpathy</div>
                 <div class="quarto-category">deeplearning</div>
                 <div class="quarto-category">self-study</div>
               </div>
@@ -154,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">2023-08-14</p>
+        <p class="date">2024-03-28</p>
       </div>
     </div>
     
@@ -170,22 +204,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a>
   <ul class="collapse">
-  <li><a href="#what-is-machine-learning" id="toc-what-is-machine-learning" class="nav-link" data-scroll-target="#what-is-machine-learning">What is machine learning</a></li>
-  <li><a href="#what-is-deep-learning" id="toc-what-is-deep-learning" class="nav-link" data-scroll-target="#what-is-deep-learning">What is deep learning</a></li>
-  <li><a href="#why-are-neural-network-great-for-machine-deep-learning" id="toc-why-are-neural-network-great-for-machine-deep-learning" class="nav-link" data-scroll-target="#why-are-neural-network-great-for-machine-deep-learning">Why are neural network great for machine / deep learning</a></li>
-  <li><a href="#modern-deep-learning-loop-and-jargon" id="toc-modern-deep-learning-loop-and-jargon" class="nav-link" data-scroll-target="#modern-deep-learning-loop-and-jargon">Modern Deep Learning Loop and Jargon</a></li>
-  <li><a href="#limitations-inherent-to-machine-learning" id="toc-limitations-inherent-to-machine-learning" class="nav-link" data-scroll-target="#limitations-inherent-to-machine-learning">Limitations Inherent to Machine Learning</a></li>
-  <li><a href="#classification-and-regression" id="toc-classification-and-regression" class="nav-link" data-scroll-target="#classification-and-regression">Classification and Regression</a></li>
-  <li><a href="#what-is-overfitting" id="toc-what-is-overfitting" class="nav-link" data-scroll-target="#what-is-overfitting">What is Overfitting</a></li>
-  <li><a href="#training-set-validation-sets-and-test-sets" id="toc-training-set-validation-sets-and-test-sets" class="nav-link" data-scroll-target="#training-set-validation-sets-and-test-sets">Training Set, Validation Sets and Test Sets</a></li>
-  <li><a href="#what-is-a-cnn-convolutional-neural-network" id="toc-what-is-a-cnn-convolutional-neural-network" class="nav-link" data-scroll-target="#what-is-a-cnn-convolutional-neural-network">What is a CNN (Convolutional neural network)</a></li>
-  <li><a href="#pertrained-model-and-fine-tuning" id="toc-pertrained-model-and-fine-tuning" class="nav-link" data-scroll-target="#pertrained-model-and-fine-tuning">Pertrained model and Fine-tuning</a></li>
+  <li><a href="#micrograd" id="toc-micrograd" class="nav-link" data-scroll-target="#micrograd">Micrograd</a></li>
+  <li><a href="#autograd" id="toc-autograd" class="nav-link" data-scroll-target="#autograd">Autograd</a></li>
+  <li><a href="#derivative" id="toc-derivative" class="nav-link" data-scroll-target="#derivative">Derivative</a></li>
+  <li><a href="#value-object" id="toc-value-object" class="nav-link" data-scroll-target="#value-object">Value Object</a></li>
+  <li><a href="#forward-pass" id="toc-forward-pass" class="nav-link" data-scroll-target="#forward-pass">Forward pass</a></li>
+  <li><a href="#chainrule" id="toc-chainrule" class="nav-link" data-scroll-target="#chainrule">Chainrule</a></li>
+  <li><a href="#backpropagation" id="toc-backpropagation" class="nav-link" data-scroll-target="#backpropagation">Backpropagation</a></li>
+  <li><a href="#operations" id="toc-operations" class="nav-link" data-scroll-target="#operations">Operations</a></li>
+  <li><a href="#neuron" id="toc-neuron" class="nav-link" data-scroll-target="#neuron">Neuron</a></li>
+  <li><a href="#layer-and-mlp-multi-layer-perceptron" id="toc-layer-and-mlp-multi-layer-perceptron" class="nav-link" data-scroll-target="#layer-and-mlp-multi-layer-perceptron">Layer and MLP (Multi-Layer-Perceptron)</a></li>
+  <li><a href="#loss" id="toc-loss" class="nav-link" data-scroll-target="#loss">Loss</a></li>
+  <li><a href="#optimizer-performing-gradient-descent" id="toc-optimizer-performing-gradient-descent" class="nav-link" data-scroll-target="#optimizer-performing-gradient-descent">Optimizer (Performing gradient descent)</a></li>
   </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -198,17 +232,13 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="your_deep_learning_journey_thumbnail.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>fastai book chapter 1 - janf - 2023</figcaption>
+<p><img src="micrograd_thumbnail.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>karpathy micrograd - janf - 2024</figcaption>
 </figure>
 </div>
 <section id="intro" class="level1">
 <h1>Intro</h1>
-<p>This my summary of chapter 1 from the book “Deep Learning for Coders with fastai &amp; PyTorch”.</p>
-<ul>
-<li>questions - question about the chapter</li>
-<li>key concepts - summarized key concepts of the chapter</li>
-</ul>
+<p>Some notes to Micrograd from Andrej Karpathy.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -220,142 +250,105 @@ Links
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Homepage: <a href="https://www.fast.ai/">fastai hompage</a></li>
-<li>Online Book: <a href="https://course.fast.ai/Resources/book.html">fastai online book</a></li>
-<li>Author: <a href="https://jeremy.fast.ai/">jermey howard</a></li>
-<li>Author: <a href="https://sgugger.github.io/">sylvain gugger</a></li>
+<li>Andrej Karpathy video: <a href="https://youtu.be/VMj-3S1tku0">Micrograd Video</a></li>
+<li>Andrej Karpathy code from the video: <a href="https://github.com/karpathy/nn-zero-to-hero/tree/master/lectures/micrograd">Code from the Video</a></li>
+<li>Andrej Karpathy micrograd implementation: <a href="https://github.com/karpathy/micrograd">Micrograd implementation</a></li>
 </ul>
 </div>
 </div>
+<section id="micrograd" class="level2">
+<h2 class="anchored" data-anchor-id="micrograd">Micrograd</h2>
+<p>Micrograd is a compact autograd-/deep-learning- engine. It implements backpropagation to calculate the gradients of a mathematical function. Furthermore it provides Classes for Neurons, Layers and MultiLayerPerceptrons to build out neural network (which is also only mathematical function) to do backpropagation on it.</p>
 </section>
-<section id="questions" class="level1">
-<h1>Questions</h1>
-<p>Questions about the chapter.</p>
-<p><a href="../../posts/2023-08-14_your_deep_learning_journey/subsite/your_deep_learning_journey_questions.html">Questions - Chapter 1 - Your deep learning journey</a></p>
+<section id="autograd" class="level2">
+<h2 class="anchored" data-anchor-id="autograd">Autograd</h2>
+<p>Autograd (Automatic Gradient) records a graph recording all of the operations that created the data as you execute operations, giving you a directed graph. The leafs are the input tensors and roots are the output tensors. By tracing this graph from roots to leaves, you can automatically compute the gradients using the chain rule.</p>
 </section>
-<section id="code" class="level1">
-<h1>Code</h1>
-<p>Code from this chapter.</p>
-<p><a href="https://github.com/xjanfcc/fastai/blob/master/book/chapter_1_your_deep_learning_practice/cats_and_dogs.ipynb">Code - Chapter 1 - Your deep learning journey - Is this a cat</a></p>
-<p><a href="https://github.com/xjanfcc/fastai/blob/master/course/part_1-1_getting_started/is_it_a_bird.ipynb">Code - Course 1-1 - Getting Started - Is it a bird</a></p>
-</section>
-<section id="key-concepts" class="level1">
-<h1>Key Concepts</h1>
-<p>Summarized key concepts ot this chapter.</p>
-<section id="what-is-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-machine-learning">What is machine learning</h2>
-<p>The idea is instead of telling the computer the exact steps required to solve a problem, show it examples of the problem to solve, and let it figure out how to solve it itself.</p>
+<section id="derivative" class="level2">
+<h2 class="anchored" data-anchor-id="derivative">Derivative</h2>
+<p>For Micrograd (and deep-learning) it is important to understand what a derivative is and what information it outputs.</p>
+<p>The derivative of a function describes the function’s instantaneous rate of change at at certain point. Another common interpretation is that the derivative gives us the slope of the line tangent to the function’s graph at that point.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="maschine_learning.jpg" class="img-fluid figure-img"></p>
-<figcaption>training a machine learning model - fastai - 2023</figcaption>
+<p><img src="derivative.svg" class="img-fluid figure-img"></p>
+<figcaption>differentiability of a function</figcaption>
 </figure>
 </div>
+<p>Example of derivative of a simple function:</p>
+<p>f = 3x**2 - 4x + 5<br> h = 0.001<br> x = 3.0</p>
+<p>how_much_the_function_responded = f(x+h) - f(x)<br> slope (rise over run) = (f(x+h) - f(x))/h</p>
+<p>In a point you interested, you slightly bump up that point (increase it by a small number h). How does the function respond with that sensitivity does it respond what is the slope at that point does the function go up or down and how much.</p>
+</section>
+<section id="value-object" class="level2">
+<h2 class="anchored" data-anchor-id="value-object">Value Object</h2>
+<p>Micrograd core object is the value object. It has the following parameters:</p>
 <ul>
-<li>weight assignment</li>
-<li>automatic means of testing the effectiveness</li>
-<li>current weight assignment in terms of actual performance</li>
-<li>mechanism for altering the weight assignment so as to maximize the performance</li>
+<li>value (the current value data)</li>
+<li>gradient (derivative of the value concerning the input of the function)</li>
+<li>_backward (backward function that calculates via chaining the outputs gradients into the local gradients)</li>
+<li>_prev (children that produced the value of this value object)</li>
+<li>_op (operation of sign as string for printing)</li>
 </ul>
-</section>
-<section id="what-is-deep-learning" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-deep-learning">What is deep learning</h2>
-<p>Deep learning is specialty within machine learning that uses neural networks with multiple layers.</p>
-</section>
-<section id="why-are-neural-network-great-for-machine-deep-learning" class="level2">
-<h2 class="anchored" data-anchor-id="why-are-neural-network-great-for-machine-deep-learning">Why are neural network great for machine / deep learning</h2>
-<ul>
-<li>If you regard a neural network as a mathematical function, it turns out to be function that ist extremely flexible depending on its weights.</li>
-<li>A mathematical proof called the universal approximation theorem shows that this function can solve any problem to any level of accuracy.</li>
-<li>In neural network we can use stochastic gradient descent (SGD).</li>
-<li>To determine the actual performance we can define our models performance as its accuracy at predicting the correct answers.</li>
-</ul>
-</section>
-<section id="modern-deep-learning-loop-and-jargon" class="level2">
-<h2 class="anchored" data-anchor-id="modern-deep-learning-loop-and-jargon">Modern Deep Learning Loop and Jargon</h2>
+<p>The value object has methods to perform calculations with different operations. Graphviz library was used to draw out the graph of the mathematical functions of the values, gradients and operations used on the value objects.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="modern_deep_learning_loop.jpg" class="img-fluid figure-img"></p>
-<figcaption>modern deep learning loop - fastai - 2023</figcaption>
+<p><img src="derivative.svg" class="img-fluid figure-img"></p>
+<figcaption>differentiability of a function</figcaption>
 </figure>
 </div>
-<ul>
-<li><b>Architecture</b> The template of the model that we trying to fit, the actual mathematical function that we’re passing the input data and parameters to.</li>
-<li><b>Model</b> The combination of the architecture with a particular set of parameters.</li>
-<li><b>Label</b> The data that we trying to predict.</li>
-<li><b>Parameters</b> The values in the model that change what task it can do and that are updated through model training</li>
-<li><b>Predictions</b> The results of the model are called predictions. The predictions are calculated from the independent variable, which is the data not including the labels.</li>
-<li><b>Loss</b> Loss ist the measurement of the performance. The loss depends not only on the predictions, but also on the correct labels.</li>
-<li><b>Fit / Train</b> Update the parameters of the model such that the predictions of the model using the input data match the target labels.</li>
-<li><b>Epoch</b> One complete pass through the input data (training set)</li>
-</ul>
 </section>
-<section id="limitations-inherent-to-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="limitations-inherent-to-machine-learning">Limitations Inherent to Machine Learning</h2>
-<ul>
-<li>A model cannot be created without data.</li>
-<li>A model can learn to operate on only the patterns seen in the input data used to train it.</li>
-<li>This learning approach creates only predictions, not recommended actions.</li>
-<li>It’s not enough to just have examples of input data, we need labels for that data too.</li>
-</ul>
-</section>
-<section id="classification-and-regression" class="level2">
-<h2 class="anchored" data-anchor-id="classification-and-regression">Classification and Regression</h2>
-<ul>
-<li><b>Classification</b> A classification model is one that attempts to predict a class, or category. That is, it’s predicting from a number of discrete possibilities.</li>
-<li><b>Regression</b> A regression model is one that attempts to predict one or more numeric quantities, such as a temperature or a location.</li>
-</ul>
-</section>
-<section id="what-is-overfitting" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-overfitting">What is Overfitting</h2>
-<p>Overfitting is the single most important and challenging issue when training for all machine learning. Training a model in such a way that it remembers specific features of the input data, rather than generalizing well to data not seen during training.</p>
-</section>
-<section id="training-set-validation-sets-and-test-sets" class="level2">
-<h2 class="anchored" data-anchor-id="training-set-validation-sets-and-test-sets">Training Set, Validation Sets and Test Sets</h2>
-<ul>
-<li><b>Training set</b> The data used for fitting the model, does not include any data from the validation set. (If there is enough data 80% is used for training)</li>
-<li><b>Validation set</b> A set of data held out from training, used only for measuring how good the model is. (If there is enough data 20% is used for validation)</li>
-<li><b>Test set</b> As we hold the validation data back from the training process, we can hold back a test set data even from ourselves. It cannot be used to improve the model, it can only be used to evaluate the model at the very end. (Take out some data for testing and split the rest to 80% for training and 20% for validation)</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For decision makers it is important to unsure to rally understand what a test and validation set is. For example you should never give out all the data to an external vender. Always hold some test data (test set) for your own validation of the final model.</p>
-</div>
+<section id="forward-pass" class="level2">
+<h2 class="anchored" data-anchor-id="forward-pass">Forward pass</h2>
+<p>Computes an output for a neuralnetwork. The forward pass takes inputs and weights to calculate the output.</p>
+<p>With the implementation of the value objet and putting the mathematical expression together the forward pass i complete and the output is computed.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> Value(<span class="fl">2.0</span>, label <span class="op">=</span> <span class="st">'a'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> Value(<span class="op">-</span><span class="fl">3.0</span>, label <span class="op">=</span> <span class="st">'b'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>e <span class="op">=</span>  a <span class="op">*</span> b<span class="op">;</span> e.label <span class="op">=</span> <span class="st">'e'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">## e = -6</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> Value(<span class="fl">10.0</span>, label <span class="op">=</span> <span class="st">'c'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> e <span class="op">+</span> c<span class="op">;</span> d.label <span class="op">=</span> <span class="st">'d'</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">## d = 4</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> Value(<span class="op">-</span><span class="fl">2.0</span>, label <span class="op">=</span> <span class="st">'f'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> d <span class="op">*</span> f<span class="op">;</span> L.label <span class="op">=</span> <span class="st">'L'</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">## L = -8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="forwardpass_valueobject.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>visual example of a mathematical expression with value objects</figcaption>
+</figure>
 </div>
 </section>
-<section id="what-is-a-cnn-convolutional-neural-network" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-cnn-convolutional-neural-network">What is a CNN (Convolutional neural network)</h2>
-<p>Convolutional neural network, a type of neural network that works particularly well for computer vision tasks.</p>
+<section id="chainrule" class="level2">
+<h2 class="anchored" data-anchor-id="chainrule">Chainrule</h2>
+<p>If a variable z depends on the variable y, which itself depends on the variable x (that is, y and z are dependent variables), then z depends on x as well, via the intermediate variable y.</p>
+<p>In this case the chain rule is expressed as</p>
+<p>dz/dx = dz/dy * dy/dx</p>
+<p>Intuitive explanation: The chain rule states that knowing the instantaneous rate of change of z relative to y and that of y relative to x allows one to calculate the instantaneous rate of change of z relative to x as the product of the two rates of change.</p>
+<p>“If a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, the car travels 2 x 4 = 8 times as fast as the man.”</p>
 </section>
-<section id="pertrained-model-and-fine-tuning" class="level2">
-<h2 class="anchored" data-anchor-id="pertrained-model-and-fine-tuning">Pertrained model and Fine-tuning</h2>
-<p><b>Pretrained model</b> A pretrained model has weights already been trained on some other dataset. You should nearly always use a pretrained model, because it means the your model, before you’ve even shown it any of your data, is already very capable. For instance. parts of pretrained models will handle edge, gradient, and color detection. which are needed for many tasks.</p>
-<p><b>Transfer learning</b> Using a pretrained model for a task different to what it was originally trained for.</p>
-<p><b>Fine-tuning</b> A transfer learning technique where the parameters of a pretrained model are updated by training for additional epochs using a different task that used for pretraining.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Using a pretrained model is the most important method we have to allow us to train more accurate models, more quickly, with less data, and less time and money.</p>
-</div>
-</div>
+<section id="backpropagation" class="level2">
+<h2 class="anchored" data-anchor-id="backpropagation">Backpropagation</h2>
+</section>
+<section id="operations" class="level2">
+<h2 class="anchored" data-anchor-id="operations">Operations</h2>
+</section>
+<section id="neuron" class="level2">
+<h2 class="anchored" data-anchor-id="neuron">Neuron</h2>
+</section>
+<section id="layer-and-mlp-multi-layer-perceptron" class="level2">
+<h2 class="anchored" data-anchor-id="layer-and-mlp-multi-layer-perceptron">Layer and MLP (Multi-Layer-Perceptron)</h2>
+</section>
+<section id="loss" class="level2">
+<h2 class="anchored" data-anchor-id="loss">Loss</h2>
+</section>
+<section id="optimizer-performing-gradient-descent" class="level2">
+<h2 class="anchored" data-anchor-id="optimizer-performing-gradient-descent">Optimizer (Performing gradient descent)</h2>
+</section>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

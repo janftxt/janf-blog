@@ -1,25 +1,23 @@
 ---
-title: ""
+title: "janf"
 about:
   id: hero-heading
   template: trestles
-  image: images/janftxt.png
+  image: images/janfb.png
   links:
-    - icon: twitter
-      text: twitter
+    - icon: twitter-x
+      text: janftxt
       href: https://twitter.com/janftxt
+      target: _blank
     - icon: github
-      text: Github
+      text: janftxt
       href: https://github.com/janftxt
+      target: _blank
 ---
-:::{#hero-heading}
-
 ## Hey 👋,
 
-I’m jan f. from west austria 🇦🇹 . I like to learn and create new things.
-Here i take notes about these processes or outcomes ✌️
+I'm janf. from west austria 🇦🇹️. I like to learn and create new things. Here i take notes about these processes or outcomes ✌️
 
 Email me at <i>mail[at]janf.cc</i> if you like!
 
 more coming soon...
-:::

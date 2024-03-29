@@ -1,5 +1,4 @@
 ---
-title: "janf"
 listing:
   contents: 
     - 'posts/*/*_post.qmd'
@@ -21,9 +20,23 @@ listing:
 page-layout: full
 title-block-banner: false
 ---
-Hello, I'm [jan f.](about.qmd) from west austria 🇦🇹 .<br> I like to learn and create new things. Here i take notes about these processes or outcomes ✌️
+::: {layout="[25,75]" align="center"}
 
+![](images/janfb_400x400.png){.avatar-round}
 
+::: {.warning}
+
+Hello, I am [janf.](about.qmd) from austria 🇦🇹️ . 
+<br>
+I like to learn and create new things. 
+<br>
+Here i take notes about these processes or outcomes ✌️
+
+:::
+
+<br>
+
+:::
 ## blog posts
 ::: {#blog-listings}
 :::

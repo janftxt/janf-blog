@@ -20,7 +20,7 @@ website:
     right:
       - icon: github
         href: https://github.com/janftxt
-      - icon: twitter
+      - icon: twitter-x
         href: https://twitter.com/janftxt
     
 format:

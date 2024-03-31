@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>janf - Questions - Chapter 4</title>
+<title>janf</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,12 +138,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/janftxt"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/janftxt" target="_blanks"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/janftxt"> <i class="bi bi-twitter-x" role="img">
+    <a class="nav-link" href="https://twitter.com/janftxt" target="_blanks"> <i class="bi bi-twitter-x" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -155,23 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Questions - Chapter 4</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
@@ -181,7 +165,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-
+<section id="questions---chapter-4" class="level1">
+<h1>Questions - Chapter 4</h1>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -210,8 +195,11 @@ Links
 </ul>
 </div>
 </div>
-<div id="cell-2" class="cell" data-execution_count="10">
+<div id="cell-1" class="cell" data-execution_count="44">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p><b> How is a grayscale image represented on a computer? How about a color image? </b></p>
 <p>Images are represented by arrays with pixel values representing the content of the image. For greyscale images, a 2-dimentional array is used with the pixeles representing the grayscale values, with a range of 256 integers. A value of 0 would represent white and a value of 255 represent black, and different shades of greyscale in between. For color images, three color channels (red,green,blue) are typicall used, with a separate 256-range 2D array used for each channel. A pixel of 0 again represent white, with 255 representing solid red, green or blue. The 2D arrays from a final 3D array (rank 3 tensor) representing the color image.</p>
@@ -230,29 +218,38 @@ Links
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>lst_out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><b> What is a rank-3 tensor? </b></p>
-<div id="cell-4" class="cell" data-execution_count="11">
+<div id="cell-3" class="cell" data-execution_count="45">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> torch.Tensor(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>))).view(<span class="dv">3</span>,<span class="dv">3</span>)<span class="op">;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>tensor([[1., 2., 3.],
         [4., 5., 6.],
         [7., 8., 9.]])</code></pre>
 </div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="12">
+<div id="cell-4" class="cell" data-execution_count="46">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> a</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>tensor([[ 2.,  4.,  6.],
         [ 8., 10., 12.],
         [14., 16., 18.]])</code></pre>
 </div>
 </div>
-<div id="cell-6" class="cell" data-execution_count="13">
+<div id="cell-5" class="cell" data-execution_count="47">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>b[<span class="dv">1</span>:,<span class="dv">1</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+</details>
+<div class="cell-output cell-output-display" data-execution_count="47">
 <pre><code>tensor([[10., 12.],
         [16., 18.]])</code></pre>
 </div>
@@ -287,8 +284,37 @@ Links
 <p>Manual calculation of the gradients are not required, as deep learning libraries will aromatically calculate the gradients for you. This feature is known as automatic differentiation. In PyTorch, if requires_grad=True, the gradients can be returned by calling the backward method (backpropagation).</p>
 <p><b> Why can’t we use accuracy as a loss function? </b></p>
 <p>A loss function needs to change as the weights are being adjusted. Accuracy only changes if the predictions of the model change. So if there are slight changes to the model, say it improves confidence in a prediction, but does not change the prediction, the accuracy will still not change. Therefore, the gradients will be zero everywhere except when the actual predictions change. The model therefore cannot learn form the gradients equal to zero, and the model’s weights will not update and will not train. A good loss function gives a slightly better loss when the model gives slightly better prediction. Slightly better predictions mean if the model is more confident about the correct prediction. For example, predicting 0.9 vs 0.7 for a probability the loss function needs to reflect that.</p>
-<p><b> Draw the sigmoid function. What is pecial about its shape? </b></p>
+<p><b> Draw the sigmoid function. What is special about its shape? </b></p>
+<div id="cell-7" class="cell" data-execution_count="48">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_function(f, tx<span class="op">=</span><span class="va">None</span>, ty<span class="op">=</span><span class="va">None</span>, title<span class="op">=</span><span class="va">None</span>, <span class="bu">min</span><span class="op">=-</span><span class="dv">2</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>)):</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> torch.linspace(<span class="bu">min</span>,<span class="bu">max</span>,<span class="dv">100</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    fig,ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>figsize)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    ax.plot(x,f(x))</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> tx <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: ax.set_xlabel(tx)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ty <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: ax.set_ylabel(ty)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> title <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: ax.set_title(title)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>plot_function(torch.sigmoid, title<span class="op">=</span><span class="st">'sigmoid'</span>, <span class="bu">min</span><span class="op">=-</span><span class="dv">4</span>,<span class="bu">max</span><span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="under_the_hood_training_a_digit_classifier_questions_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Sigmoid function is a smooth curve that squishes all values into values between 0 and 1. Most loss functions assume that the model is outputting some form of a probability or confidence level between 0 and 1 so we use the sigmoid function at the end of the model in order to always output a number between 0 and 1.</p>
 <p><b> What is the difference between a loss function and a metric? </b></p>
+<p>Metric drive human understanding and the loss is to drive automated learning.</p>
+<p>loss: the loss must be a function that has a meaningfull derivative. It can’t have big flat sections and large jumps, but instead must be reasonably smooth. This is why we use loss functions that would respond to small changes in confidence level. The loss function is calculated for each item in our dataset, and then at the end of an epoch, the loss values are all averaged and the overall mean is reported for the epoch.</p>
+<p>metric: Metrics are the values that are printed at the end of each epoch that tell us how our model is doing. It is important that we learn to focus on these metrics, rather than the loss, when judging the performance of a model.</p>
 <p><b> What is the function to calculate new weights using a learning rate? </b></p>
 <p><b> What does the DataLoader class do? </b></p>
 <p><b> Write pseudocode showing the basic steps taken in each epoch for SGD. </b></p>
@@ -306,6 +332,7 @@ Links
 <p><b> The universal approximation theorem shows that any function can be approximated as closely as needed using just one nonlinearity. So why do we normally use more? </b></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

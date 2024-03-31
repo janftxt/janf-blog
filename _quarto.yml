@@ -20,8 +20,10 @@ website:
     right:
       - icon: github
         href: https://github.com/janftxt
+        target: _blanks
       - icon: twitter-x
         href: https://twitter.com/janftxt
+        target: _blanks
     
 format:
   html:

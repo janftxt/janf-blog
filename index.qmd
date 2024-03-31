@@ -26,7 +26,7 @@ title-block-banner: false
 
 ::: {.warning}
 
-Hello, I am [janf.](about.qmd) from austria 🇦🇹️ . 
+Hello, I am [janf](about.qmd) from austria 🇦🇹️ . 
 <br>
 I like to learn and create new things. 
 <br>

@@ -1,0 +1,19 @@
+---
+format:
+  html:
+    navbar: false
+    page-layout: custom
+---
+
+* janf 
+  + [my page](https://janf.cc)
+  + [my notes](https://janf.cc/notes)
+\
+\
+* help
+  + vimium help | ?
+  + open or search links | o
+    - in a new tab | O
+  + open or search bookmarks | b
+    - in a new tab | B
+  + mange bookmarks | Strg + Shift + o

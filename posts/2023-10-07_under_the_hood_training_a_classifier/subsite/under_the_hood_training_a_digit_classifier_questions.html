@@ -75,18 +75,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
+  "panel-placement": "start",
   "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
+    " "
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -106,57 +103,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-sidebar docked fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">janf</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../../blog.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../notes.html"> 
-<span class="menu-text">Notes</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/janftxt" target="_blanks"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/janftxt" target="_blanks"> <i class="bi bi-twitter-x" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      janf
+      </li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">janf</a> 
+        <div class="sidebar-tools-main">
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../blog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blog</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -195,19 +197,19 @@ Links
 </ul>
 </div>
 </div>
-<div id="cell-1" class="cell" data-execution_count="44">
+<div id="cell-1" class="cell" data-execution_count="64">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p><b> How is a grayscale image represented on a computer? How about a color image? </b></p>
+<p><b> 1. How is a grayscale image represented on a computer? How about a color image? </b></p>
 <p>Images are represented by arrays with pixel values representing the content of the image. For greyscale images, a 2-dimentional array is used with the pixeles representing the grayscale values, with a range of 256 integers. A value of 0 would represent white and a value of 255 represent black, and different shades of greyscale in between. For color images, three color channels (red,green,blue) are typicall used, with a separate 256-range 2D array used for each channel. A pixel of 0 again represent white, with 255 representing solid red, green or blue. The 2D arrays from a final 3D array (rank 3 tensor) representing the color image.</p>
-<p><b> How are the files an folders in the MNIST_SAMPLE dataset structured? Why? </b></p>
+<p><b> 2. How are the files an folders in the MNIST_SAMPLE dataset structured? Why? </b></p>
 <p>There are two subfolders, train and valid, the former contains the data for modeling training, the latter contains the data for validating model performance after each training step. Evaluating the model on the validation set serves tow purposes: a.) to report a human interpretable metric such as accuracy (in contract to the often abstract loss functions used for training), b.) to facilitate the detection of overfitting by evaluating the model on da dataset it hasn’t been trained on (in short, an overfitting model performs increasingly well on the training set but decreasingly so an the validation set). Of course, every practitioner could generate their own train/validation-split of the data. Public datasets are usually pre-split to simplifying comparing results between implementations/publications.</p>
-<p><b> Explain how the “pixel similarity” approach to classifying digits works. </b></p>
+<p><b> 3. Explain how the “pixel similarity” approach to classifying digits works. </b></p>
 <p>In the pixel similarity approach, we generate an archetype for each class we want to identify. In our case, we want to distinguish images of 3’s from images of 7’s. We define the archetypical 3 as the pixel-wise mean values of all 3’s in the training set. Analog for the 7’s. You can visualize the tow archetypes and see that they are in fact blurred version of the number they represent. In order to tell if previously unseen image is a 3 or a 7, we calculate its distance to the tow archetypes (here: mean pixel-wise absolute difference). We say the new images are a 3 if the distance to the archetypical 3 is lower that tow the archetypical 7.</p>
-<p><b> What is a list comprehension? Create one now that selects odd numbers from a list and doubles them. </b></p>
+<p><b> 4. What is a list comprehension? Create one now that selects odd numbers from a list and doubles them. </b></p>
 <p>List (arrays in other programming languages) are often generated using a for-loop. A list comprehension in Python is condensing the creation of list using a for-loop into a single expression. List comprehension will also often include if clauses for filtering.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lst_in <span class="op">=</span> <span class="bu">range</span>(<span class="dv">10</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>lst_out <span class="op">=</span> [<span class="dv">2</span><span class="op">*</span>el <span class="cf">for</span> el <span class="kw">in</span> lst_in <span class="cf">if</span> el<span class="op">%</span><span class="dv">2</span><span class="op">==</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -217,52 +219,80 @@ Links
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        lst_out.append(<span class="dv">2</span><span class="op">*</span>el)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>lst_out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><b> What is a rank-3 tensor? </b></p>
-<div id="cell-3" class="cell" data-execution_count="45">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> torch.Tensor(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>))).view(<span class="dv">3</span>,<span class="dv">3</span>)<span class="op">;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<p><b> 5. What is a rank-3 tensor? </b></p>
+<p>The rank of a tensor is the number of dimension it has. An easy way to identify the rank is the number of indices you would need to reference a number within a tensor. A scalar can be represented as a tensor of rank 0 (no index), a vector can be represented as a tensor of rank 1 (in index e.g.&nbsp;v[i]), a matrix can be represented as tensor of rank 2 (two indices, e.g.&nbsp;a[i,j]), and a tensor of rank 3 in a cuboid of a “stacked of matrices” (there indices, e.g.&nbsp;b[i,j,k]). In particular, the rank of a tensor is independent of its shape of dimensionality, e.g.&nbsp;a tensor of shape 2x2x2 and a tensor of shape 2x5x7 both have rank 3.</p>
+<p><b> 6. What is the difference between tensor rank and shape? How do you get the rank from the shape? </b></p>
+<ul>
+<li>Rank is the number of axes of dimension in a tensor</li>
+<li>Shape is the size of each axis of a tensor</li>
+</ul>
+<div id="cell-3" class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> untar_data(URLs.MNIST_SAMPLE)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>threes <span class="op">=</span> (path<span class="op">/</span><span class="st">'train'</span><span class="op">/</span><span class="st">'3'</span>).ls().<span class="bu">sorted</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>three_tensors <span class="op">=</span> [tensor(Image.<span class="bu">open</span>(o)) <span class="cf">for</span> o <span class="kw">in</span> threes]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>stacked_threes <span class="op">=</span> torch.stack(three_tensors).<span class="bu">float</span>()<span class="op">/</span><span class="dv">255</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>stacked_threes.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="65">
+<pre><code>torch.Size([6131, 28, 28])</code></pre>
+</div>
+</div>
+<p>We just need to find its length to know its rank, This id done as follows:</p>
+<div id="cell-5" class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(stacked_threes.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="66">
+<pre><code>3</code></pre>
+</div>
+</div>
+<p>You can also get a tensor’s rank directly with ndim.</p>
+<div id="cell-7" class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>stacked_threes.ndim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="67">
+<pre><code>3</code></pre>
+</div>
+</div>
+<p>so stacked_threes - has a rank of 3. - and has a shape of [6131,28,28] - dim 1 has a length of 6131 - dim 2 has a length of 28 - dim 3 has a length of 28</p>
+<p><b> 7. What is RMSE and L1 norm? </b></p>
+<p>Root mean squared error (RMSE), also called the L2 norm, and mean absolute difference (MAE), also called the L1 norm, are tow commonly used methods of measuring “distance”. Simple difference do not work because some difference are positive and others are negative, canceling each other out. Therefore, a function that focuses on the magnitude of the differences in needed to properly measure distances. The simplest would be to add the absolute value of the differences, which is what MAE is. RMSE takes the mean of the square (makes everything positive) and then takes the square root (undoes squaring).</p>
+<p><b> 8. How can you apply a calculation on thousand of numbers at once. many thousand of times faster than python loop? </b></p>
+<p>As loops are very slow in Python, it is best to represent the operations as array operations rather than looping through individual elements. If this can be done, then using NumPy of PyTorch will be thousand of time faster, as they use underlying C code which is much faster than pure Python. Even better, PyTorch allows you to run operations on GPU, which will have significant speedup if there are parallel operations that can be done.</p>
+<p><b> 9. Create a 3x3 tensor array containing the numbers from 1 to 9. Double it. Select the bottom right our numbers. </b></p>
+<div id="cell-10" class="cell" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> torch.Tensor(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>))).view(<span class="dv">3</span>,<span class="dv">3</span>)<span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tensor([[1., 2., 3.],
         [4., 5., 6.],
         [7., 8., 9.]])</code></pre>
 </div>
 </div>
-<div id="cell-4" class="cell" data-execution_count="46">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> a</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div id="cell-11" class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> a</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tensor([[ 2.,  4.,  6.],
         [ 8., 10., 12.],
         [14., 16., 18.]])</code></pre>
 </div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="47">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>b[<span class="dv">1</span>:,<span class="dv">1</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="47">
+<div id="cell-12" class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>b[<span class="dv">1</span>:,<span class="dv">1</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="70">
 <pre><code>tensor([[10., 12.],
         [16., 18.]])</code></pre>
 </div>
 </div>
-<p><b> What is broadcasting? </b></p>
+<p><b> 10. What is broadcasting? </b></p>
 <p>Sientific/numerical Python packages like NumPy and PyTorch will often implement broadcasting that often makes code easier to write. In the case of PyTorch, tensor with saller rank are expanded to have the same size as the larger tensor. In this way, operations can be performed between tensor with different rank.</p>
-<p><b> Are metrics generally calculated using the trining set or the validation set? Why? </b></p>
+<p><b> 11. Are metrics generally calculated using the trining set or the validation set? Why? </b></p>
 <p>Metrics are generally calculated on a validation set. As the validation set is unseen data for the model, evaluating the metrics on the validation set is better in order to determine if there is any overfitting and how well the model might generalize if given similar data.</p>
-<p><b> What is SGD? </b></p>
+<p><b> 12. What is SGD? </b></p>
 <p>SGD, or stochastic gradient decent, is an optimization algorithm. Specifically, SGD is an algorithm that will update the parameters of a model in order to minimize a given loss function that was evaluated on the prediction and target. The key idea behind SGD (and many optimization algorithms, for that matter) is that the gradient of the loss function provides and indication of how that loss function changes in the parameter space, which we use to determine how best to update the parameters in order to minimize the loss function. This is what SGD does.</p>
-<p><b> Why does SGD use mini-batches? </b></p>
+<p><b> 13. Why does SGD use mini-batches? </b></p>
 <p>We need to calculate our loss function (and our gradient) on one or more data points. We cannot calculate on the whole dataset due to compute limitations and time constraints. If we iterated through each data point, however, the gradients will be unstable and imprecise, and is not suitable for training. As a compromise, we calculate the average loss for a small subset of the dataset at a time. This subset is called a mini-batch. Using a mini-batches are also more computationally efficient that single items on a GPU.</p>
-<p><b> What are the seven steps in SGD for machine learning? </b></p>
+<p><b> 14. What are the seven steps in SGD for machine learning? </b></p>
 <ol type="1">
 <li>Initialize the weights.</li>
 <li>Use the weights to predict.</li>
@@ -272,64 +302,141 @@ Links
 <li>Go back to step 2.</li>
 <li>Iterate until you decide to stop the training process (for instance, because the model is good enough or you don’t want to wait any longer).</li>
 </ol>
-<p><b> How do we initialize the weights in a model? </b></p>
+<p><b> 15. How do we initialize the weights in a model? </b></p>
 <p>We initialize the parameters to random values.</p>
-<p><b> What a loss? </b></p>
+<p><b> 16. What a loss? </b></p>
 <p>The loss gives a number of how good the effectiveness of a current weight assignment is in terms of actual performance. The loss function should return a number that is small if the performance of the model is good. (the standard approach ist to teat a small loss as good and a large loss as bad)</p>
-<p><b> Why can’t we use a high learning rate? </b></p>
+<p><b> 17. Why can’t we use a high learning rate? </b></p>
 <p>The size of the step we take when applying SGD to update the parameters of the model.The learning rate is often a number between 0.001 and 0.1, although is could be anything. Often people select a learning rate just by typing a few, and finding which results in the best model after training.</p>
-<p><b> What is a gradient? </b></p>
+<p><b> 18. What is a gradient? </b></p>
 <p>The derivative of the loss with respect to some parameter of the model. The gradients are calculated in the backpropagation (this function could also be called calculate_gradients). The gradients tell us only the slope of the function, they don’t tell exactly how far to adjust the parameters. But they give us some idea of how far: if the slope is very large, that may suggest that we have more adjustments to do, whereas it the slope is very small, that may suggest that we are close to the optimal value.</p>
-<p><b> Do you need to know how to calculate gradients yourself? </b></p>
+<p><b> 19. Do you need to know how to calculate gradients yourself? </b></p>
 <p>Manual calculation of the gradients are not required, as deep learning libraries will aromatically calculate the gradients for you. This feature is known as automatic differentiation. In PyTorch, if requires_grad=True, the gradients can be returned by calling the backward method (backpropagation).</p>
-<p><b> Why can’t we use accuracy as a loss function? </b></p>
+<p><b> 20. Why can’t we use accuracy as a loss function? </b></p>
 <p>A loss function needs to change as the weights are being adjusted. Accuracy only changes if the predictions of the model change. So if there are slight changes to the model, say it improves confidence in a prediction, but does not change the prediction, the accuracy will still not change. Therefore, the gradients will be zero everywhere except when the actual predictions change. The model therefore cannot learn form the gradients equal to zero, and the model’s weights will not update and will not train. A good loss function gives a slightly better loss when the model gives slightly better prediction. Slightly better predictions mean if the model is more confident about the correct prediction. For example, predicting 0.9 vs 0.7 for a probability the loss function needs to reflect that.</p>
-<p><b> Draw the sigmoid function. What is special about its shape? </b></p>
-<div id="cell-7" class="cell" data-execution_count="48">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_function(f, tx<span class="op">=</span><span class="va">None</span>, ty<span class="op">=</span><span class="va">None</span>, title<span class="op">=</span><span class="va">None</span>, <span class="bu">min</span><span class="op">=-</span><span class="dv">2</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>)):</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> torch.linspace(<span class="bu">min</span>,<span class="bu">max</span>,<span class="dv">100</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    fig,ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>figsize)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    ax.plot(x,f(x))</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> tx <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: ax.set_xlabel(tx)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ty <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: ax.set_ylabel(ty)</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> title <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: ax.set_title(title)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>plot_function(torch.sigmoid, title<span class="op">=</span><span class="st">'sigmoid'</span>, <span class="bu">min</span><span class="op">=-</span><span class="dv">4</span>,<span class="bu">max</span><span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<p><b> 21. Draw the sigmoid function. What is special about its shape? </b></p>
+<div id="cell-14" class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_function(f, tx<span class="op">=</span><span class="va">None</span>, ty<span class="op">=</span><span class="va">None</span>, title<span class="op">=</span><span class="va">None</span>, <span class="bu">min</span><span class="op">=-</span><span class="dv">2</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>)):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> torch.linspace(<span class="bu">min</span>,<span class="bu">max</span>,<span class="dv">100</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    fig,ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>figsize)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    ax.plot(x,f(x))</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> tx <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: ax.set_xlabel(tx)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ty <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: ax.set_ylabel(ty)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> title <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: ax.set_title(title)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>plot_function(torch.sigmoid, title<span class="op">=</span><span class="st">'sigmoid'</span>, <span class="bu">min</span><span class="op">=-</span><span class="dv">4</span>,<span class="bu">max</span><span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="under_the_hood_training_a_digit_classifier_questions_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="under_the_hood_training_a_digit_classifier_questions_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Sigmoid function is a smooth curve that squishes all values into values between 0 and 1. Most loss functions assume that the model is outputting some form of a probability or confidence level between 0 and 1 so we use the sigmoid function at the end of the model in order to always output a number between 0 and 1.</p>
-<p><b> What is the difference between a loss function and a metric? </b></p>
+<p><b> 22. What is the difference between a loss function and a metric? </b></p>
 <p>Metric drive human understanding and the loss is to drive automated learning.</p>
 <p>loss: the loss must be a function that has a meaningfull derivative. It can’t have big flat sections and large jumps, but instead must be reasonably smooth. This is why we use loss functions that would respond to small changes in confidence level. The loss function is calculated for each item in our dataset, and then at the end of an epoch, the loss values are all averaged and the overall mean is reported for the epoch.</p>
 <p>metric: Metrics are the values that are printed at the end of each epoch that tell us how our model is doing. It is important that we learn to focus on these metrics, rather than the loss, when judging the performance of a model.</p>
-<p><b> What is the function to calculate new weights using a learning rate? </b></p>
-<p><b> What does the DataLoader class do? </b></p>
-<p><b> Write pseudocode showing the basic steps taken in each epoch for SGD. </b></p>
-<p><b> Create a function that, if passed two arguments [1,2,3,4] and ‘abcd’ returns [(1,‘a’),(2,‘b’),(3,‘c’),(4,‘d’)]. What is special about that output data structure? </b></p>
-<p><b> What does view do in PyTorch? </b></p>
-<p><b> What are the bias parameters in a neural network? Why do we need them? </b></p>
-<p><b> What does the @ operator do in Python? </b></p>
-<p><b> What does the backward method do? </b></p>
-<p><b> Why do we have to zero the gradients? </b></p>
-<p><b> What information do we have to pass to Learner? </b></p>
-<p><b> Show Python or pseudocode for the basic steps of a training loop. </b></p>
-<p><b> What is ReLU? Draw a plot of it for values from -2 to +2. </b></p>
-<p><b> What is a activation function? </b></p>
-<p><b> What’s the difference between F.rulu and nn.ReLUJ? </b></p>
-<p><b> The universal approximation theorem shows that any function can be approximated as closely as needed using just one nonlinearity. So why do we normally use more? </b></p>
+<p><b> 23. What is the function to calculate new weights using a learning rate? </b></p>
+<p>The optimizer step function.</p>
+<p><b> 24. What does the DataLoader class do? </b></p>
+<p>The DataLoader class can take any Python collection and turn it into an iterator over many batches.</p>
+<p><b> 25. Write pseudocode showing the basic steps taken in each epoch for SGD. </b></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x,y <span class="kw">in</span> dl:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    pred <span class="op">=</span> model(x)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> loss_func(pred, y)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    loss.backward()</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    parameters <span class="op">-=</span> parameters.grad <span class="op">*</span> lr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><b> 26. Create a function that, if passed two arguments [1,2,3,4] and ‘abcd’ returns [(1,‘a’),(2,‘b’),(3,‘c’),(4,‘d’)]. What is special about that output data structure? </b></p>
+<div id="cell-17" class="cell" data-execution_count="72">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func(a,b): <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">zip</span>(a,b))</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>func([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],<span class="st">'abcd'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="72">
+<pre><code>[(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]</code></pre>
+</div>
+</div>
+<p>This data structure is useful for machine learning models when you need list of tuples where each tuple would contain input data and a label.</p>
+<p><b> 27. What does view do in PyTorch? </b></p>
+<p>It changes the shape of a Tensor without changing its contents.</p>
+<div id="cell-19" class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.randn(<span class="dv">4</span>,<span class="dv">4</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="73">
+<pre><code>tensor([[ 0.0109, -0.3387, -1.3407, -0.5854],
+        [ 0.5362,  0.5246,  1.1412,  0.0516],
+        [ 0.7440, -0.4816, -1.0495,  0.6039],
+        [-1.7223, -0.8278,  1.3347,  0.4835]])</code></pre>
+</div>
+</div>
+<div id="cell-20" class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x. size()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="74">
+<pre><code>torch.Size([4, 4])</code></pre>
+</div>
+</div>
+<div id="cell-21" class="cell" data-execution_count="75">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x.view(<span class="dv">16</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="75">
+<pre><code>tensor([ 0.0109, -0.3387, -1.3407, -0.5854,  0.5362,  0.5246,  1.1412,  0.0516,  0.7440, -0.4816, -1.0495,  0.6039, -1.7223, -0.8278,  1.3347,  0.4835])</code></pre>
+</div>
+</div>
+<div id="cell-22" class="cell" data-execution_count="76">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>y.size()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="76">
+<pre><code>torch.Size([16])</code></pre>
+</div>
+</div>
+<p><b> 28. What are the bias parameters in a neural network? Why do we need them? </b></p>
+<p>Without the bias parameters, if the input is zero, the output will always be zero. Therefore, using the bias parameter adds additional flexibility to the model.</p>
+<p><b> 29. What does the @ operator do in Python? </b></p>
+<p>It is the operator for matrix multiplication.</p>
+<p><b> 30. What does the backward method do? </b></p>
+<p>The backward method calculates the gradients.</p>
+<p><b> 31. Why do we have to zero the gradients? </b></p>
+<p>PyTorch will add the gradients of a variable to any previously stored gradients. If the training loop function is called multiple times, without zeroing the gradients, the gradients of current loss would be added to the previously stored gradient values.</p>
+<p><b> 32. What information do we have to pass to Learner? </b></p>
+<p>We need to pass:</p>
+<ul>
+<li>the DataLoaders</li>
+<li>the model</li>
+<li>the optimization function</li>
+<li>the loss function</li>
+<li>and optionally any metrics to print</li>
+</ul>
+<p><b> 33. Show Python or pseudocode for the basic steps of a training loop. </b></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_epoch(model,lr,params):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> xb,yb <span class="kw">in</span> dl:</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        calc_grad(xb,yb,model) </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> p <span class="kw">in</span> params:</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>            p.data <span class="op">-=</span> p.grad <span class="op">*</span> lr</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>            p.grad_zero_()</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>):</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    train_epoch(model,lr,params)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><b> 34. What is ReLU? Draw a plot of it for values from -2 to +2. </b></p>
+<p>ReLU just means ‘replace any negative number with zero’. It is a commonly used activation function.</p>
+<div id="cell-24" class="cell" data-execution_count="77">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plot_function(F.relu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="under_the_hood_training_a_digit_classifier_questions_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><b> 35. What is a activation function? </b></p>
+<p>The activation function is another function that is part of the neural network, which has the purpose of providing non-linearity to the model. The idea that without an activation function, we just have multiple linear functions of the form y=my+b. However, a series of linear layers is equivalent to a single linear layer, so our model can only fit a line to the data. By introducing a non-linearity in between the linear layers, this is not longer true. Each layer is somewhat decoupled from the rest of the layers, and the model can now fit much more complex functions. In fast, it can be mathematically proven that such a model can solve any computable problem to any possible a high accuracy, if the model is large enough with thr correct weights. This is known as the universal approximation theorem.</p>
+<p><b> 36. What’s the difference between F.rulu and nn.ReLUJ? </b></p>
+<p>F.relu is a Python function for the relu activation function. On the other hand, nn.ReLU is a PyTorch module. This means that it is a Python class that can be balled as a function in the same way as F.relu.</p>
+<p><b> 37. The universal approximation theorem shows that any function can be approximated as closely as needed using just one nonlinearity. So why do we normally use more? </b></p>
+<p>There are practical performance benefits to using more than one onlineartiy. We can use a deeper model with less number of parameters, better performance, faster training, and less compute/memory requirements.</p>
 
 
 </section>

@@ -78,18 +78,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
+  "panel-placement": "start",
   "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
+    " "
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -109,93 +106,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">janf</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../notes.html"> 
-<span class="menu-text">Notes</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/janftxt" target="_blanks"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/janftxt" target="_blanks"> <i class="bi bi-twitter-x" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      janf
+      </li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">pytorch tensor cheatsheet</h1>
-                  <div>
-        <div class="description">
-          pytorch tensor cheatsheet
-        </div>
-      </div>
-                          <div class="quarto-categories">
-                <div class="quarto-category">cheatsheet</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>janf </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">2023-09-09</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">janf</a> 
+        <div class="sidebar-tools-main">
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../blog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blog</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -231,10 +197,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">pytorch tensor cheatsheet</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">cheatsheet</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    pytorch tensor cheatsheet
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>janf </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2023-09-09</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="what-are-tensors" class="level2">
@@ -245,7 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="import-torch" class="level2">
 <h2 class="anchored" data-anchor-id="import-torch">Import torch</h2>
-<div id="cell-4" class="cell" data-execution_count="40">
+<div id="cell-4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -255,20 +256,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="factory-method" class="level3">
 <h3 class="anchored" data-anchor-id="factory-method">Factory Method</h3>
 <p>Creating an empty tensor. <b>torch.empty()</b></p>
-<div id="cell-7" class="cell" data-execution_count="41">
+<div id="cell-7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a tensor with 2-dimensions, 3 rows and 4 columns.</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.empty(<span class="dv">3</span>,<span class="dv">4</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># by default tenors are 32-bit gloating point numbers.</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># torch.empty() allocates memory for the tensor but does not initialize it with any values</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>tensor([[1.5766e-19, 1.0256e-08, 2.5783e-09, 3.0441e+12],
-        [4.3353e-08, 1.7188e-04, 6.7510e-07, 1.2611e+16],
-        [2.1707e-18, 7.0952e+22, 1.7748e+28, 1.8176e+31]])</code></pre>
+<pre><code>tensor([[-9.1441e-36,  3.1727e-41, -2.0320e-05,  4.3379e-41],
+        [-2.0320e-05,  4.3379e-41, -2.0321e-05,  4.3379e-41],
+        [-2.0261e-05,  4.3379e-41, -1.9782e-05,  4.3379e-41]])</code></pre>
 </div>
 </div>
 <p>Creating a tensor full of zeros. <b>torch.zeros()</b></p>
-<div id="cell-9" class="cell" data-execution_count="42">
+<div id="cell-9" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a tensor with 2-dimensions, 2 rows and 3 columns.</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.zeros(<span class="dv">2</span>,<span class="dv">3</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -278,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Creating a tensor full of ones. <b>torch.ones()</b></p>
-<div id="cell-11" class="cell" data-execution_count="43">
+<div id="cell-11" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a tensor with 2-dimensions, 3 rows and 1 column.</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.ones(<span class="dv">3</span>,<span class="dv">1</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -289,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Creating a tenor full of random values. <b>torch.rand()</b></p>
-<div id="cell-13" class="cell" data-execution_count="44">
+<div id="cell-13" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">187</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a tensor with 2-dimension, 2 rows and 3 columns.</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>random <span class="op">=</span> torch.rand(<span class="dv">2</span>,<span class="dv">3</span>)</span>
@@ -303,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creating-a-tensor-with-specific-data-directly" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-tensor-with-specific-data-directly">Creating a tensor with specific data directly</h3>
 <p><b>torch.tensor()</b> is the way to create a tenors if you have a Python tuple or list. Is creates a copy of the data as tensor.</p>
-<div id="cell-16" class="cell" data-execution_count="45">
+<div id="cell-16" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.tensor(([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>]))</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.shape)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -318,7 +319,7 @@ tensor([[1, 2, 3],
 <h3 class="anchored" data-anchor-id="random-tensor-and-seeding">Random tensor and seeding</h3>
 <p><b>torch.manual_seed()</b> sets the random seed to fixes the random outputs.</p>
 <p><b>torch.rand()</b> creates a random tensor.</p>
-<div id="cell-19" class="cell" data-execution_count="46">
+<div id="cell-19" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">187</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>random <span class="op">=</span> torch.rand(<span class="dv">5</span>,<span class="dv">5</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(random)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -334,18 +335,18 @@ tensor([[1, 2, 3],
 <section id="creating-tensor-with-the-shape-like" class="level3">
 <h3 class="anchored" data-anchor-id="creating-tensor-with-the-shape-like">Creating tensor with the shape like</h3>
 <p>Creating a tensor having the same number dimensions and the same number of cells in each dimension. - <b>torch.empty_like()</b> - <b>torch.zeros_like()</b> - <b>torch.ones_like()</b> - <b>torch.rand_like()</b></p>
-<div id="cell-21" class="cell" data-execution_count="47">
+<div id="cell-21" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.empty(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>zeros_like_x <span class="op">=</span> torch.zeros_like(x)</span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeros_like_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>tensor([[[0.0000e+00, 6.8664e-44, 2.7002e-06],
-         [2.6965e+23, 3.3429e+21, 1.0489e-08]],
+<pre><code>tensor([[[3.5032e-44, 0.0000e+00, 0.0000e+00],
+         [0.0000e+00, 0.0000e+00, 0.0000e+00]],
 
-        [[1.6505e-07, 1.7664e-04, 4.1532e-08],
-         [5.3928e-05, 1.6597e-07, 5.3130e-08]]])
+        [[0.0000e+00, 0.0000e+00, 0.0000e+00],
+         [0.0000e+00, 1.4013e-45, 0.0000e+00]]])
 tensor([[[0., 0., 0.],
          [0., 0., 0.]],
 
@@ -362,7 +363,7 @@ tensor([[[0., 0., 0.],
 <li>2-dimensional tensor is called a matrix</li>
 <li>3-dimensional or more tensor is called a tensor</li>
 </ul>
-<div id="cell-23" class="cell" data-execution_count="48">
+<div id="cell-23" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>d0 <span class="op">=</span> torch.ones(<span class="dv">1</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'scalar (0-dim)'</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d0)</span>
@@ -420,10 +421,10 @@ tensor([[[1., 1., 1., 1.],
 </div>
 </div>
 <p><b>.shape</b> property gives list of the extant of each dimension</p>
-<div id="cell-25" class="cell" data-execution_count="49">
+<div id="cell-25" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.zeros(<span class="dv">2</span>,<span class="dv">1</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>x.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="49">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>torch.Size([2, 1])</code></pre>
 </div>
 </div>
@@ -432,7 +433,7 @@ tensor([[[1., 1., 1., 1.],
 <h3 class="anchored" data-anchor-id="tensor-data-types">Tensor data types</h3>
 <p>One way to set the data type of a tensor is with an optional argument at creation.</p>
 <p>You can see the specified dtype by printing the tensor.</p>
-<div id="cell-27" class="cell" data-execution_count="50">
+<div id="cell-27" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> torch.ones((<span class="dv">2</span>,<span class="dv">3</span>), dtype<span class="op">=</span>torch.int16)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -441,7 +442,7 @@ tensor([[[1., 1., 1., 1.],
 </div>
 </div>
 <p>Another way to set the datatype is with the <strong>.to()</strong> method. It converts a float64 and creates a int32 tensor.</p>
-<div id="cell-29" class="cell" data-execution_count="51">
+<div id="cell-29" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> torch.ones((<span class="dv">2</span>,<span class="dv">3</span>), dtype<span class="op">=</span>torch.float64)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -472,7 +473,7 @@ tensor([[1, 1, 1],
 <section id="math-logic" class="level2">
 <h2 class="anchored" data-anchor-id="math-logic">Math &amp; Logic</h2>
 <p>Basic arithmetic with tensors.</p>
-<div id="cell-32" class="cell" data-execution_count="52">
+<div id="cell-32" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>twos <span class="op">=</span> torch.ones(<span class="dv">2</span>,<span class="dv">2</span>) <span class="op">*</span> <span class="dv">2</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(twos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -482,7 +483,7 @@ tensor([[1, 1, 1],
 </div>
 <p>Arithmetic operations between tensors and scalars, such as addition, subtraction, multiplication, division, and exponentiation are distributed over every element of the tensor.</p>
 <p>Operation between tow tensors also behave intuitively:</p>
-<div id="cell-34" class="cell" data-execution_count="53">
+<div id="cell-34" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>ones <span class="op">=</span> torch.ones(<span class="dv">2</span>,<span class="dv">2</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ones <span class="op">+</span> twos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -491,7 +492,7 @@ tensor([[1, 1, 1],
 </div>
 </div>
 <p>Tensors of dissimilar shape will throw a run-time error when calculated via binary operation.</p>
-<div id="cell-36" class="cell" data-execution_count="54">
+<div id="cell-36" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The following throws a run-time error. This is intentional.</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> torch.rand(<span class="dv">2</span>,<span class="dv">3</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> torch.rand(<span class="dv">3</span>,<span class="dv">4</span>)</span>

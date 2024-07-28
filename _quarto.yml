@@ -4,26 +4,23 @@ project:
   - CNAME
 
 website:
-  title: "janf"
+  title: janf
   site-url: https://janf.cc
-  description: "janf.cc"
-  search: true
+  description: janf.cc
   favicon: images/janftxt_favicon.png
-  navbar:
-    left:
+  search: 
+    location: sidebar
+    type: overlay
+    keyboard-shortcut: [" "]
+  sidebar:
+    style: docked
+    contents:
       - text: "Blog"
         file: blog.qmd
       - text: "Notes"
         file: notes.qmd
       - text: "About"
         file: about.qmd
-    right:
-      - icon: github
-        href: https://github.com/janftxt
-        target: _blanks
-      - icon: twitter-x
-        href: https://twitter.com/janftxt
-        target: _blanks
     
 format:
   html:

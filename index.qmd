@@ -20,23 +20,11 @@ listing:
 page-layout: full
 title-block-banner: false
 ---
-::: {layout="[25,75]" align="center"}
-
-![](images/janfb_400x400.png){.avatar-round}
-
-::: {.warning}
-
-Hello, I am [janf](about.qmd) from austria 🇦🇹️ . 
-<br>
-I like to learn and create new things. 
-<br>
-Here i take notes about these processes or outcomes ✌️
-
+::: {.blog-header}
+### Hey,
+I am [janf](about.qmd) (or janftxt).
 :::
 
-<br>
-
-:::
 ## blog posts
 ::: {#blog-listings}
 :::
